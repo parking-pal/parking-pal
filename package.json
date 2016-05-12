@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/parking-pal/parking-pal/issues"
   },
-  "homepage": "https://github.com/parking-pal/parking-pal#readme"
+  "homepage": "https://github.com/parking-pal/parking-pal#readme",
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  }
 }
