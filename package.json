@@ -1,0 +1,19 @@
+{
+  "name": "parking-pal",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/parking-pal/parking-pal.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parking-pal/parking-pal/issues"
+  },
+  "homepage": "https://github.com/parking-pal/parking-pal#readme"
+}
