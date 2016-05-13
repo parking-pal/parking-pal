@@ -1,1 +1,34 @@
-<h1>Homeowner Page</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+    </head>
+    <body>
+        <header>
+           <h1>Homeowner Page</h1>
+        
+    <form method="post" action="/homeowner">
+      <div class="nl-field nl-ti-text">
+        <a class="nl-field-toggle">any city</a>
+        <ul>
+          <li class="nl-ti-input">
+            <input type="text" value="" placeholder="any city" />
+            <button class="nl-field-go">Go</button>
+          </li>
+          <li class="nl-ti-example">Type Your Address<em>Example: 1405 St Paul Street</em><em>Kelowna, BC V1Y 9N2</em></li>
+        </ul>
+      </div>
+      <div>
+       <select class="c-select">
+          <option selected>Open this select menu</option>
+          <option value="1">Weekly</option>
+          <option value="2">Monthly</option>
+        </select>    
+      </div>
+    
+            <input type="text" name="homeowner" value="{{test}}">
+            <input type="submit" value="Submit">
+    </form>
+    </header>
+    </body>   
+</html>
