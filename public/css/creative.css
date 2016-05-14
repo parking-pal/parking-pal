@@ -3,6 +3,41 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+.service-box img {
+     width: 100px;
+    height: 100px;
+}
+.home-button-1{
+    float: left;
+    margin-left: 120px;
+}
+.home-button-2{
+    float: right;
+    margin-right: 120px;
+}
+
+.text-muted{
+    color:white;
+}
+
+.parkingSpotForm{
+    width:50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.c-select{
+    color:#888;
+}
+.m-select{
+    cursor: pointer;
+     color:#888;
+}
+.rentalPrice{
+    width:20%;
+    display: inline-block;
+    text-align: center;
+}
 
 html,
 body {
