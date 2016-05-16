@@ -8,7 +8,16 @@
             </div>
         </div>    
      </header>
-
+      <table>
+        {{#each users}}
+          <tr>
+            <td>{{first_name}}</td>
+            <td>{{last_name}}</td>
+            <td>{{email}}</td>
+            <td>{{phone}}</td>
+          </tr>
+        {{/each}}
+      </table>
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
