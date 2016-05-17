@@ -11,9 +11,13 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         User.hasMany(models.Rental);
         User.hasMany(models.ParkingSpot);
-        // associations can be defined here
       }
     }
+  });
+
+  var passportSequelize = require('passport-local-sequelize');
+  passportSequelize.attachToUser(User, {
+    usernameField: 'email'
   });
 
   return User;
