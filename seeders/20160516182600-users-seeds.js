@@ -2,58 +2,48 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-
-      return queryInterface.bulkInsert('Users', [
-      {
-        first_name: 'Johnny',
-        last_name: 'Doe II',
-        email: 'johnny@doe.com',
+    var bunchOfUsers = queryInterface.bulkInsert('Users', [{
+        first_name: 'Joey',
+        last_name: 'Ramone',
+        email: 'joey@ramones.com',
         phone: '(250) 123-4568',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },      {
+        createdAt: new Date(2016, 5, 10, 12, 24, 34),
+        updatedAt: new Date(2016, 5, 10, 12, 24, 34)
+      }, {
         first_name: 'Bob',
-        last_name: 'Doe III',
-        email: 'johnnyX@doe.com',
-        phone: '(250) 123-4569',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },      {
-        first_name: 'Doug',
-        last_name: 'Doe IV',
-        email: 'johnnyXXX@doe.com',
+        last_name: 'Denver',
+        email: 'bob@island.com',
+        phone: '(250) 123-1264',
+        createdAt: new Date(2016, 5, 7, 14, 7, 14),
+        updatedAt: new Date(2016, 5, 7, 14, 7, 14)
+      }, {
+        first_name: 'Samantha',
+        last_name: 'Carter',
+        email: 'sam@sg1.com',
+        phone: '(250) 122-1334',
+        createdAt: new Date(2016, 5, 5, 9, 34, 45),
+        updatedAt: new Date(2016, 5, 5, 9, 34, 45)
+      }, {
+        first_name: 'Alice',
+        last_name: 'Cooper',
+        email: 'alice@nightmare.com',
         phone: '(250) 123-4560',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
+        createdAt: new Date(2016, 5, 12, 9, 45, 11),
+        updatedAt: new Date(2016, 5, 12, 9, 45, 11)
+      }, {
+        first_name: 'Doug',
+        last_name: 'McKenzie',
+        email: 'doug@hoser.com',
+        phone: '(250) 123-4569',
+        createdAt: new Date(2016, 5, 11, 14, 34, 14),
+        updatedAt: new Date(2016, 5, 11, 14, 34, 14)
+      }],
+    {});
 
-
-      ], {});
-    /*
-    return queryInterface.bulkInsert('links', [
-            {type: 1, cost: 2, delivery_period: 5, carrier_id: 1, loc_begin: 1, loc_end: 2, id_item: 1, created_at: new Date(), updated_at: new Date()},
-            {type: 1, cost: 2, delivery_period: 5, carrier_id: 2, loc_begin: 3, loc_end: 4, id_item: 2, created_at: new Date(), updated_at: new Date()},
-            {type: 1, cost: 2, delivery_period: 5, carrier_id: 3, loc_begin: 5, loc_end: 6, id_item: 3, created_at: new Date(), updated_at: new Date()},
-            {type: 1, cost: 2, delivery_period: 5, carrier_id: 4, loc_begin: 7, loc_end: 8, id_item: 4, created_at: new Date(), updated_at: new Date()},
-        ], {});
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('Person', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+    return bunchOfUsers;
   },
 
   down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };
