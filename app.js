@@ -19,6 +19,7 @@ require('./controllers/home')(app);
 require('./controllers/commuter')(app);
 require('./controllers/homeowner')(app);
 require('./controllers/payments')(app);
+require('./controllers/api')(app);
 
 
 models.sequelize.sync().then(function () {
@@ -29,3 +30,8 @@ models.sequelize.sync().then(function () {
 
 // to connect to the database from the terminal
 // psql -h localhost -U postgres -d parkingpal
+
+
+// sequelize model:create --name users --attributes first_name:string,last_name:string,email:string,phone:string
+// sequelize model:create --name rentals --attributes first_name:string,last_name:string,email:string,phone:string
+// sequelize model:create --name parking-spots --attributes first_name:string,last_name:string,email:string,phone:string
