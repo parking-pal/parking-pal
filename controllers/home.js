@@ -23,9 +23,14 @@ module.exports = function(app) {
     else if (req.query.action == 'login'){
       return res.redirect('/login');
     }
+    else if (req.query.action == 'logout'){
+      return res.redirect('/');
+    }
     models.User.findAll().then(function(rows) {
-      var data = { users: rows };
+      var data = { user: req.user, alertMessage: 'RED ALERT'};
+
    //   console.log(data.users[1]);
+
       res.render('home', data);
     }).catch(function(error){
       console.log(JSON.stringify(error));

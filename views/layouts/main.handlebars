@@ -54,8 +54,21 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="/login">Login</a>
+                        {{#if user}}
+                        <p class="navbar-text">
+                            <strong>Hi,</strong>
+                              {{user.first_name}}
+                        </p>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                       <a href="/logout" action="logout">Logout</a>
+                    </li>
+                        {{else}}
+                        <a href="/login">Login</a>
+                    </li>
+                        {{/if}}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
