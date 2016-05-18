@@ -10,8 +10,6 @@ function initMap() {
   });
 }
 
-
-
 function setMarkers(map) {
   var $ = jQuery;
   $.getJSON("/api/parkingSpot", function(houses) {
@@ -39,7 +37,7 @@ function setMarkers(map) {
         document.getElementById('address').innerHTML = ('<h2><small>Address: </small></h2>' + this.address)
         document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00')
         document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ this.rental_length+' days')
-        document.getElementById('avail').innerHTML = ('<small>Available before:  </small>'+ moment(this.avail).format('dddd MMMM Do'))
+        document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('dddd MMMM Do LT'))
         document.getElementById('idbutt').href = ('/commuter/rent/' + this.id )
       });
     }
@@ -52,7 +50,7 @@ function setMarkers(map) {
     }
   });
 };
-  var contentString = '<div id="infowin"><h2 id="price"></h2>' + '<h2 id="rental_length"></h2>' + '<h2 id="avail"></h2>'+ '<p id="address"></p>'+ '<a id="idbutt" href=""><button class="btn btn-default butt">Rent</button></a></div>';
+  var contentString = '<div id="infowin"><h2 id="price"></h2>' + '<h2 id="rental_length"></h2>' + '<h2 id="avail"></h2>'+ '<p id="address"></p>'+ '<a id="idbutt" href=""><button class="btn btn-default butt" id="butt">Rent</button></a></div>';
 
   // marker.addListener('click', function(geocoder) {
       //   var geocoder = new google.maps.Geocoder;
