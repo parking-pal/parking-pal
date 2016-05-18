@@ -20,8 +20,11 @@ module.exports = function(app) {
 // Simple route middleware to ensure user is authenticated.
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }
-      req.session.redirectUrl = req.url
-      req.session.error = 'Please sign in!';
-      res.redirect('/login');
-    }
+        req.session.redirectUrl = req.url
+        req.session.error = 'Please sign in!';
+        res.redirect('/login', req.session.redirectUrl);
+      }
 }
+
+// lsof -n -i :3000 | grep LISTEN
+// kill -9 16599
