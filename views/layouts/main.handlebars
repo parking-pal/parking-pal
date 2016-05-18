@@ -13,8 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
-    <!-- DateTimePicker -->
-    <link rel="stylesheet" href="/public/css/bootstrap-datetimepicker.min.css">
+    
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -28,6 +27,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/public/css/creative.css" type="text/css">
+
+    <!-- DateTimePicker -->
+    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -270,7 +272,7 @@
     <script src="/public/js/jquery.fittext.js"></script>
     <script src="/public/js/wow.min.js"></script>
     <script type="text/javascript" src="/public/js/moment.min.js"></script> 
-    <script type="text/javascript" src="/public/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="/public/js/bootstrap-spinner/bootstrap-spinner.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
@@ -280,12 +282,6 @@
       async defer></script> 
 </body>
     <script type="text/javascript">
-         var j = jQuery.noConflict();
-           j(document).ready(function(){
-            j('#datetimepicker11').datetimepicker({
-                daysOfWeekDisabled: [0, 6],
-                pickTime: false
-            });
-        });
+
     </script>
 </html>

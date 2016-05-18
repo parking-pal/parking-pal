@@ -79,8 +79,12 @@ button.butt {
     font-weight: normal;
     color:#f05f40;
 }
+.form-control {
+    text-align: center;
+}
 .form-signin .form-control
 {
+    text-align: center;
     position: relative;
     font-size: 16px;
     height: auto;
@@ -172,9 +176,15 @@ button.butt {
      color:#888;
 }
 .rentalPrice{
-    width:20%;
+    margin: auto;
+    width:60%;
     display: inline-block;
     text-align: center;
+}
+
+.plusMinus {
+    width:33%;
+    float: left;
 }
 
 html,
@@ -345,12 +355,15 @@ aside {
     }
 }
 
+header h1{
+    color: #fff;
+}
+
 header {
     position: relative;
     width: 100%;
     min-height: auto;
     text-align: center;
-    color: #fff;
     background-image: url(../img/header.jpg);
     background-position: center;
     -webkit-background-size: cover;
