@@ -4,15 +4,17 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+ #homeMap {
+    width: 100%;
+ }
+
 table.homeowner-table {
     table-layout: auto;
-    width: 100%;
 }
 
-.homeowner-wall
-{
-    margin-left: 10%;
-    margin-right: 10%;
+.homeowner-wall {
+    margin-left: 40px;
+    margin-right: 40px;
     margin-top: 0px;
     padding: 40px 0px 20px 0px;
     background-color: #f7f7f7;
@@ -30,10 +32,11 @@ table.homeowner-table {
     color: black;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
+    text-align: left; 
 }
 #map-div {
-    height: 500px;
+    height: 700px;
     width: 90%;
     margin: auto;
     padding: 10px;
@@ -42,10 +45,9 @@ table.homeowner-table {
 }
 
 #map-div-homeowner {
-    height: 400px;
-    width: 400px;
-    margin-left: 0px;
-    margin-right: 50px;
+    height: 600px;
+    width: 600px;
+    margin: 10px;
     padding: 10px;
     display: flex;
     justify-content: center;

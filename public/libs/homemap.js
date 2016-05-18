@@ -1,16 +1,16 @@
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+function initHomeMap() {
+  var map = new google.maps.Map(document.getElementById('homeMap'), {
     zoom: 15,
     center: {lat: 49.888, lng: -119.495},
     mapTypeId: google.maps.MapTypeId.HYBRID
   });
-  setMarkers(map);
-  infowindow = new google.maps.InfoWindow({
+  var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
+  setMarkers(map, infowindow);
 }
 
-function setMarkers(map) {
+function setMarkers(map, infowindow) {
   var $ = jQuery;
   $.getJSON("/api/parkingSpot", function(houses) {
     console.log(houses)
@@ -27,18 +27,17 @@ function setMarkers(map) {
         avail: house.availability,
         id: house.id
       });
-      if (marker.user == null) {
-        marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
-      }
 
       marker.addListener('click', toggleBounce);
       marker.addListener('click', function() {
         infowindow.open(map, this);
+        // if (this.user == null) {
+        //   document.getElementById('butt').a = 'hi'
+        // };
         document.getElementById('address').innerHTML = ('<h2><small>Address: </small></h2>' + this.address)
         document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00')
         document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ this.rental_length+' days')
         document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('dddd MMMM Do LT'))
-        document.getElementById('idbutt').href = ('/commuter/rent/' + this.id )
       });
     }
     function toggleBounce() {
@@ -50,12 +49,13 @@ function setMarkers(map) {
     }
   });
 };
-  var contentString = '<div id="infowin"><h2 id="price"></h2>' + '<h2 id="rental_length"></h2>' + '<h2 id="avail"></h2>'+ '<p id="address"></p>'+ '<a id="idbutt" href=""><button class="btn btn-default butt" id="butt">Rent</button></a></div>';
+  var contentString = 
+     '<div id="infowin"><h2 id="price"></h2>'
+   + '<h2 id="rental_length"></h2>' 
+   + '<h2 id="avail"></h2>'
+   + '<p id="address"></p></div>';
 
-  // marker.addListener('click', function(geocoder) {
-      //   var geocoder = new google.maps.Geocoder;
-      //   var latlng = {lat: this.position.lat(), lng: this.position.lng() }
-      //   geocoder.geocode({'location': latlng}, function(results) {
-      //     document.getElementById('address').innerHTML = results[1].formatted_address;
-      //   })
-      // });
+
+function myMarker() {
+
+};

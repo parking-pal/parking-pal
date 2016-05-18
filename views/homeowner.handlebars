@@ -5,7 +5,7 @@
                 <tr>    
                     <td>     
                             <!-- Homeowner Parking Spot Form -->
-                        <div class="homeowner-wall">
+                        <div class="homeowner-wall .col-lg-3">
                           <form method="post" action="/homeowner" class="parkingSpotForm">
     <!-- ADDRESS -->
                             <div>
@@ -61,10 +61,15 @@
                         </div>  
                     </td>                 
                     <td>
+                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI8bTRZVfp9K-DER1MfqkYsOrPKiVxwYM  
+                     &callback=initHomeMap"
+                     async defer></script>
+                      <script src="/public/libs/homemap.js"></script>
     <!-- Google Maps API INSERT HERE -->
                         <div class="table-center">
                          <div id="map-div-homeowner" class="bg-dark">
-                          <div id="map" onload="initMap()"></div>
+                          <div id="homeMap" onload="initHomeMap()"></div>
+
                          </div>
                         </div>
                     </td>
