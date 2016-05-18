@@ -22,9 +22,9 @@
                                       </div>
     <!-- Rental Length -->
                             <div>
-                                <select class="form-control" id="rentalLength">
-                                  <option name="weekly">Weekly</option>
-                                  <option name="monthly">Monthly</option>
+                                <select class="form-control" id="rentalLength" name="rental_length">
+                                  <option name="weekly" value="1">Weekly</option>
+                                  <option name="monthly" value="2">Monthly</option>
                                 </select>
                             </div><br>
     <!-- Rental Price -->
@@ -50,14 +50,16 @@
                                       </div>
                                   </div>
                             </div>
+    <!--  Hidden geolocation field -->
+                            <input type="hidden" id="latitude" name="latitude" value="49.899" />
+                            <input type="hidden" id="longitude" name="longitude" value="-119.401" />
                             <br><br>
                             <div>
                             <button type="submit" class="btn btn-default btn-xl wow tada">Submit</button>
                             </div>
                            </form> 
                         </div>  
-                    </td>
-                   
+                    </td>                 
                     <td>
     <!-- Google Maps API INSERT HERE -->
                         <div class="table-center">

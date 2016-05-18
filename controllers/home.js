@@ -2,6 +2,9 @@ var models = require('../models');
 
 module.exports = function(app) {
   app.get('/', function (req, res) {
+    var data = { user: req.user, url: req.session.redirectUrl, query: req.query.action };
+
+    console.log("home.js at the top app.get('/'", data);
     if (req.query.action == 'commuter'){
       return res.redirect('/commuter');
     }
@@ -24,9 +27,9 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     models.User.findAll().then(function(rows) {
-      var data = { user: req.user };
+      var data = { user: req.user, sess: req.session, url: req.session.redirectUrl };
 
-   //   console.log(data.users[1]);
+      console.log("home.js", data.user);
 
       res.render('home', data);
     }).catch(function(error) {
