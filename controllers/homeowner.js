@@ -1,13 +1,11 @@
 module.exports = function(app) {
     app.post('/homeowner', function (req, res){
-      console.log('daryls a dingo', req.body.homeowner);
-      var data = {
-        test: req.body.homeowner
-      }
+      var data = { user: req.user}
       res.render('homeowner', data);
     })
     app.get('/homeowner', function (req, res) {
-      res.render('homeowner');
+      var data = { user: req.user}
+      res.render('homeowner', data);
   });
 
 // Simple route middleware to ensure user is authenticated.

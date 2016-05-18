@@ -27,7 +27,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     models.User.findAll().then(function(rows) {
-      var data = { user: req.user, alertMessage: 'RED ALERT'};
+      var data = { user: req.user };
 
    //   console.log(data.users[1]);
 

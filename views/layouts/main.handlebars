@@ -13,6 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
+    <!-- DateTimePicker -->
+    <link rel="stylesheet" href="/public/css/bootstrap-datetimepicker.min.css">
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -21,7 +23,6 @@
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="/public/css/animate.min.css" type="text/css">
-
 
 
 
@@ -75,6 +76,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
                    {{{body}}}
 
     <section id="services">
@@ -273,13 +275,16 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/public/js/creative.js"></script>
-
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI8bTRZVfp9K-DER1MfqkYsOrPKiVxwYM  
+      &callback=initMap"
+      async defer></script> 
 </body>
     <script type="text/javascript">
          var j = jQuery.noConflict();
            j(document).ready(function(){
             j('#datetimepicker11').datetimepicker({
-                daysOfWeekDisabled: [0, 6]
+                daysOfWeekDisabled: [0, 6],
+                pickTime: false
             });
         });
     </script>
