@@ -18,7 +18,13 @@ module.exports = function(app) {
     }).then (function(user) {
     console.log(user);
     req.login(user, function(err){
-      return res.redirect('/');
+       if (req.session.redirectUrl) {
+         res.redirect(req.session.redirectUrl);
+         req.session.redirectUrl = null
+         return 
+       }
+      else
+        return res.redirect('/');  
       });  
           
     }).catch(function(err) {
