@@ -11,8 +11,8 @@ table.homeowner-table {
 
 .homeowner-wall
 {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 0px;
     padding: 40px 0px 20px 0px;
     background-color: #f7f7f7;
@@ -42,9 +42,10 @@ table.homeowner-table {
 }
 
 #map-div-homeowner {
-    height: 300px;
-    width: 300px;
-    margin: 10px;
+    height: 400px;
+    width: 400px;
+    margin-left: 0px;
+    margin-right: 50px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -364,7 +365,7 @@ header {
     width: 100%;
     min-height: auto;
     text-align: center;
-    background-image: url(../img/header.jpg);
+    background-image: url(../img/parking-pal-header_Fotor3.png);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
