@@ -27,9 +27,6 @@ function setMarkers(map, infowindow) {
         avail: house.availability,
         id: house.id
       });
-      if (marker.user == null) {
-        marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
-      }
 
       marker.addListener('click', toggleBounce);
       marker.addListener('click', function() {
@@ -57,3 +54,8 @@ function setMarkers(map, infowindow) {
    + '<h2 id="rental_length"></h2>' 
    + '<h2 id="avail"></h2>'
    + '<p id="address"></p></div>';
+
+
+function myMarker() {
+
+};
