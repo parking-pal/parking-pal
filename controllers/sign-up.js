@@ -2,6 +2,7 @@ var models = require('../models');
 
 module.exports = function(app) {
   app.get('/sign-up', function (req, res) {
+    console.log("****app.get******");
     res.render('sign-up', {redirect: req.query.redirect})
   });
 
@@ -19,6 +20,11 @@ module.exports = function(app) {
     req.login(user, function(err){
       return res.redirect('/');
       });  
+          
+    }).catch(function(err) {
+      console.log(err);
+      res.send('BAAAADDDDDDD:   G-' + err.message);
     });
+
   });
 }

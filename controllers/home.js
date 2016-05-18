@@ -1,10 +1,7 @@
 var models = require('../models');
 
-
 module.exports = function(app) {
-
   app.get('/', function (req, res) {
-
     if (req.query.action == 'commuter'){
       return res.redirect('/commuter');
     }
@@ -32,7 +29,7 @@ module.exports = function(app) {
    //   console.log(data.users[1]);
 
       res.render('home', data);
-    }).catch(function(error){
+    }).catch(function(error) {
       console.log(JSON.stringify(error));
     });
 
