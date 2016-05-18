@@ -2,6 +2,7 @@ module.exports = function(app) {
 
     app.get('/homeowner', function (req, res) {
       var data = { user: req.user}
+      console.log("homeowner.js  app.get('/homeowner'", data);
       res.render('homeowner', data);
   });
 
