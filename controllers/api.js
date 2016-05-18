@@ -5,11 +5,8 @@ module.exports = function(app) {
 
   app.get('/api/parkingSpot', function (req, res) {
 
-      models.ParkingSpot.findAll().then(function(rows) {
-//      var data = { users: rows };
-   //   console.log(data.users[1]);
+    models.ParkingSpot.findAll().then(function(rows) {
       res.json(rows);
-
     }).catch(function(error){
       console.log(JSON.stringify(error));
     });

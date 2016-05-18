@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
+  console.log("$$$ IN USER.JS")
+
   var User = sequelize.define('User', {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,

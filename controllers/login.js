@@ -1,7 +1,8 @@
 var passport = require('passport');
 
 module.exports = function(app) {
-  app.get('/login', function (req, res) {
+  app.get('/login/:usertype?/:id?', function (req, res) {
+    console.log(req.params);
     res.render('login', {redirect: req.query.redirect});
   });
 
