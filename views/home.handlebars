@@ -27,7 +27,11 @@
                       <button name="action" value="commuter" class="btn btn-default btn-xl wow tada">Find Parking</button>
                       </form></div>
                       <div class="home-button-2">
+                      {{#if user}}
+                      <a href="/homeowner" class="btn btn-default btn-xl wow tada">List Parking</a>
+                      {{else}}
                       <a href="/login?redirect=/homeowner" class="btn btn-default btn-xl wow tada">List Parking</a>
+                      {{/if}}
                   </div>
               </div>
            </div>

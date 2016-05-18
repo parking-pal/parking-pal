@@ -2,7 +2,8 @@ var models = require('../models');
 
 module.exports = function(app) {
   app.get('/commuter', function (req, res) {
-    res.render('commuter');
+    var data = { user: req.user}
+    res.render('commuter', data);
   });
 
   app.get('/commuter/rent/:parking_id', function (req, res) {    
