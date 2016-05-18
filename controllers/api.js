@@ -10,8 +10,6 @@ module.exports = function(app) {
     }).catch(function(error){
       console.log(JSON.stringify(error));
     });
-
-
   });
 
   app.get('/api/user', function (req, res) {
@@ -20,8 +18,6 @@ module.exports = function(app) {
     }).catch(function(error){
       console.log(JSON.stringify(error));
     });
-
-
   });
 
 }
