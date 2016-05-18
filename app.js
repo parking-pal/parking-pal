@@ -61,6 +61,8 @@ passport.use(new LocalStrategy(
       function(user) {
         if(!user) return done(null, false);
         if(user.password != password) return done(null, false);
+
+        // if (!user.decryptPassword(password)) return done(null, false);
         return done(null, user);
       },
       function(err) {

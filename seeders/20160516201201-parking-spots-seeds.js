@@ -23,6 +23,7 @@ module.exports = {
       longitude: -119.487376,
       start_time: '8:30AM',
       end_time: '5:30PM',
+      UserId: 3,
       createdAt: new Date(2016, 5, 11, 14, 34, 14),
       updatedAt: new Date(2016, 5, 11, 14, 34, 14)
     }, {
@@ -34,7 +35,7 @@ module.exports = {
       longitude: -119.487186,
       start_time: '7:45AM',
       end_time: '4:45PM',
-      UserId: 3,
+      UserId: 2,
       createdAt: new Date(2016, 5, 12, 9, 45, 11),
       updatedAt: new Date(2016, 5, 12, 9, 45, 11)
     },
