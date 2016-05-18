@@ -7,7 +7,11 @@ module.exports = function(app) {
 
   app.post('/login', 
     passport.authenticate('local', { failureRedirect: '/login' }), function(req, res, next) {
-      if (req.session.redirectUrl){
+      console.log(req.query.redirect);
+      if (req.query.redirect){
+        res.redirect(req.query.redirect);
+      }
+      else if (req.session.redirectUrl){
          res.redirect(req.session.redirectUrl);
          req.session.redirectUrl = null
          return 
