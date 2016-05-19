@@ -1,6 +1,7 @@
 var models = require('../models');
 var middleware = require('../lib/middleware');
 
+
 module.exports = function(app) {
   app.get('/commuter', function (req, res) {
     var data = { user: req.user}
