@@ -1,4 +1,5 @@
 var models = require('../models');
+//var ensureAuthenticated = require('../models/validate.js');
 
 module.exports = function(app) {
   app.get('/commuter', function (req, res) {

@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.post('/homeowner', ensureAuthenticated, function(req, res) {
     var data = { user: req.user}
     res.render('homeowner', data);
-    console.log(req.body);
+    console.log("homeowner.js  app.post('/homeowner'", req.body);
     var parkingSpot = models.ParkingSpot.create({
       address: req.body.address,
       availability_date: req.body.availability_date,
