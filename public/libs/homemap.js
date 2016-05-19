@@ -1,3 +1,4 @@
+var myMarker;
 function initHomeMap() {
   map = new google.maps.Map(document.getElementById('homeMap'), {
     zoom: 15,
@@ -55,24 +56,31 @@ function setMarkers(map, infowindow) {
    + '<h2 id="avail"></h2>'
    + '<p id="address"></p></div>';
 
-
+   var mark = 
  $("#addbutt").on("click", function() {
+  $('.textinfo').text('Please drag marker onto your parking spot');
   var geocoder = new google.maps.Geocoder();
   var address = $("#address").val();
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
       map.setZoom(20);
-      var myMarker = new google.maps.Marker({
+      if (myMarker) {
+        myMarker.setPosition(results[0].geometry.location);
+      } else {
+        myMarker = new google.maps.Marker({
+        animation: google.maps.Animation.DROP,
         map: map,
         position: results[0].geometry.location,
         draggable: true,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
       });
-      console.log(myMarker)
+    }
     } else {
       alert("Geocode was not successful for the following reason: " + status)
     };
     google.maps.event.addListener(myMarker, 'dragend', function(evt){
+      $('.textinfo').text("Confirm your marker before submitting.")
       var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
       console.log(coord)
     })
