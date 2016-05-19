@@ -1,5 +1,5 @@
 function initHomeMap() {
-  var map = new google.maps.Map(document.getElementById('homeMap'), {
+  map = new google.maps.Map(document.getElementById('homeMap'), {
     zoom: 15,
     center: {lat: 49.888, lng: -119.495},
     mapTypeId: google.maps.MapTypeId.HYBRID
@@ -56,6 +56,25 @@ function setMarkers(map, infowindow) {
    + '<p id="address"></p></div>';
 
 
-function myMarker() {
-
-};
+ $("#addbutt").on("click", function() {
+  var geocoder = new google.maps.Geocoder();
+  var address = $("#address").val();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      map.setZoom(20);
+      var myMarker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location,
+        draggable: true,
+      });
+      console.log(myMarker)
+    } else {
+      alert("Geocode was not successful for the following reason: " + status)
+    };
+    google.maps.event.addListener(myMarker, 'dragend', function(evt){
+      var coord = (evt.latLng.lat().toFixed(3) + evt.latLng.lng().toFixed(3));
+      console.log(coord)
+    })
+  });
+});

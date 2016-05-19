@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Rental = sequelize.define('Rental', {
-    stripe_id: DataTypes.INTEGER
+    is_active: DataTypes.BOOLEAN
   }, {
     classMethods: {
       associate: function(models) {
