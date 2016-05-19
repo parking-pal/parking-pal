@@ -1,0 +1,32 @@
+<header>
+  <br><br><br><br><br><br><br>
+      <div class="dashboard">
+        <div class="container">
+          <h2>Your Parking Spots!</h2>        
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Address </th>
+                <th>Availability Date</th>
+                <th>Rental Length</th>
+                <th>Rental Price</th>
+                <th>Rental Time (From)</th>
+                <th>Rental Time (Until)</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each parkingSpots}}
+              <tr>
+                <td>{{address}}</td>
+                <td>{{availability}}</td>
+                <td>{{rental_length}}</td>
+                <td>{{rental_price}}</td>
+                <td>{{start_time}}</td>
+                <td>{{end_time}}</td>
+              </tr>
+            {{/each}}  
+            </tbody>
+          </table>
+      </div>
+    </div>
+</header>

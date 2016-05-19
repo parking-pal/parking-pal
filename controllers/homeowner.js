@@ -1,5 +1,5 @@
 var models = require('../models');
-
+var middleware = require('../lib/middleware');
 module.exports = function(app) {
 
     app.get('/homeowner', function (req, res) {
@@ -8,7 +8,7 @@ module.exports = function(app) {
       res.render('homeowner', data);
   });
 
-  app.post('/homeowner', ensureAuthenticated, function(req, res) {
+  app.post('/homeowner', middleware.ensureAuthenticated, function(req, res) {
     var data = { user: req.user}
     res.render('homeowner', data);
     console.log(req.body);
@@ -33,15 +33,7 @@ module.exports = function(app) {
     //    }
     //   else
     //     return res.redirect('/');  
-      });  
-});
-  
-// Simple route middleware to ensure user is authenticated.
-    function ensureAuthenticated(req, res, next) {
-      if (req.isAuthenticated()) { return next(); }
-      req.session.redirectUrl = req.url
-      req.session.error = 'Please sign in!';
-      res.redirect('/login');
-    }
-}
+    });
+  });
+}  
 
