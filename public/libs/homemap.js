@@ -73,7 +73,7 @@ function setMarkers(map, infowindow) {
       alert("Geocode was not successful for the following reason: " + status)
     };
     google.maps.event.addListener(myMarker, 'dragend', function(evt){
-      var coord = (evt.latLng.lat().toFixed(3) + evt.latLng.lng().toFixed(3));
+      var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
       console.log(coord)
     })
   });
