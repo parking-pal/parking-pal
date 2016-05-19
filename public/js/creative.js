@@ -48,13 +48,4 @@
     
 })(jQuery); // End of use strict
 
-$(function () {
-// DateTimePicker Bootstrap 
-       // console.log($('#datetimepicker11'));
-        $('#datetimepicker12').datetimepicker({
-           defaultDate: "11/1/2013"
-        });
-        console.log($('#datetimepicker12'));
-});
- // daysOfWeekDisabled: [0, 6],
- //            pickTime: false
+

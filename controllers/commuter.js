@@ -1,4 +1,5 @@
 var models = require('../models');
+var middleware = require('../lib/middleware');
 
 module.exports = function(app) {
   app.get('/commuter', function (req, res) {
@@ -7,7 +8,7 @@ module.exports = function(app) {
     res.render('commuter', data);
   });
 
-  app.get('/commuter/rent/:parking_id', ensureAuthenticated, function (req, res) {    
+  app.get('/commuter/rent/:parking_id', middleware.ensureAuthenticated, function (req, res) {    
     models.ParkingSpot.findById(req.params.parking_id).then(function(spot) {
       var data = { user: req.user, spot: spot };
       console.log("commuter_rental   app.get('/commuter/rent/:parking_id'", data);
@@ -26,14 +27,6 @@ module.exports = function(app) {
       res.redirect('/');    
     });
   });
-
-// Simple route middleware to ensure user is authenticated.
-    function ensureAuthenticated(req, res, next) {
-      if (req.isAuthenticated()) { return next(); }
-        req.session.redirectUrl = req.url
-        req.session.error = 'Please sign in!';
-        res.redirect('/login');//, req.session.redirectUrl);
-      }
 }
 
 // lsof -n -i :3000 | grep LISTEN
