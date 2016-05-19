@@ -12,7 +12,7 @@ app.use('/public', express.static(__dirname + '/public'));
 
 models.sequelize.sync().then(function () {
   console.log('Listening on port 3000');
-  app.listen(3000);
+  app.listen(process.env.PORT || 3000);
 });
 
 // to connect to the database from the terminal
