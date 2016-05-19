@@ -1,11 +1,6 @@
 var models = require('../models');
-<<<<<<< HEAD
 
 var middleware = require('../lib/middleware');
-=======
-var middleware = require('../lib/middleware');
-
->>>>>>> master
 
 module.exports = function(app) {
   app.get('/commuter', function (req, res) {
