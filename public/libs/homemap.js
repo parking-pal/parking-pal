@@ -80,7 +80,7 @@ function setMarkers(map, infowindow) {
       alert("Geocode was not successful for the following reason: " + status)
     };
     google.maps.event.addListener(myMarker, 'dragend', function(evt){
-      $('.textinfo').text("Confirm your marker before submitting.")
+      $('.textinfo').text("Please confirm your marker before submitting.")
       var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
       console.log(coord)
     })
