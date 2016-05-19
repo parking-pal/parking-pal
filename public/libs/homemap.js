@@ -57,35 +57,36 @@ function setMarkers(map, infowindow) {
    + '<p id="address"></p></div>';
 
    var mark = 
- $("#addbutt").on("click", function() {
-  $('.textinfo').text('Please drag marker onto your parking spot');
-  var geocoder = new google.maps.Geocoder();
-  var address = $("#address").val();
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location);
-      map.setZoom(20);
-      if (myMarker) {
-        myMarker.setPosition(results[0].geometry.location);
+   $("#addbutt").on("click", function() {
+    $('.textinfo').text('Please drag marker onto your parking spot');
+    var geocoder = new google.maps.Geocoder();
+    var address = $("#address").val();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        map.setZoom(20);
+        if (myMarker) {
+          myMarker.setPosition(results[0].geometry.location);
+        } else {
+          myMarker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+          });
+        };
+        document.getElementById('latitude').value = (results[0].geometry.location.lat())
+        document.getElementById('longitude').value = (results[0].geometry.location.lng())
       } else {
-        myMarker = new google.maps.Marker({
-        animation: google.maps.Animation.DROP,
-        map: map,
-        position: results[0].geometry.location,
-        draggable: true,
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-      });
-      document.getElementById('latitude').value = (results[0].geometry.location.lat())
-      document.getElementById('longitude').value = (results[0].geometry.location.lng())
-    } else {
-      alert("Geocode was not successful for the following reason: " + status)
-    };
-    google.maps.event.addListener(myMarker, 'dragend', function(evt){
-      $('.textinfo').text("Please confirm your marker before submitting.")
-      var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
-      document.getElementById('latitude').value = (evt.latLng.lat());
-      document.getElementById('longitude').value = (evt.latLng.lng());
-      console.log("evt.latLng.lat()", evt.latLng.lat(), evt.latLng.lng());
-    })
+        alert("Geocode was not successful for the following reason: " + status)
+      };
+      google.maps.event.addListener(myMarker, 'dragend', function(evt){
+        $('.textinfo').text("Please confirm your marker before submitting.")
+        var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
+        document.getElementById('latitude').value = (evt.latLng.lat());
+        document.getElementById('longitude').value = (evt.latLng.lng());
+        console.log("evt.latLng.lat()", evt.latLng.lat(), evt.latLng.lng());
+      })
+    });
   });
-});
