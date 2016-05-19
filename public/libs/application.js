@@ -13,7 +13,6 @@ function initMap() {
 function setMarkers(map) {
   var $ = jQuery;
   $.getJSON("/api/parkingSpot", function(houses) {
-    console.log(houses)
     for (var i = 0; i < houses.length; i++) {
       var house = houses[i];
       var marker = new google.maps.Marker({
@@ -27,16 +26,19 @@ function setMarkers(map) {
         avail: house.availability,
         id: house.id
       });
-      if (marker.user == null) {
-        marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
-      }
-
+      // if (marker.user == null) {
+      //   marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
+      // }
       marker.addListener('click', toggleBounce);
       marker.addListener('click', function() {
         infowindow.open(map, this);
-        document.getElementById('address').innerHTML = ('<h2><small>Address: </small></h2>' + this.address)
-        document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00')
-        document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ this.rental_length+' days')
+        document.getElementById('address').innerHTML = ('<h2><small>Address: </small></h2>' + this.address);
+        document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00');
+        if (this.rental_length == 1) {
+          document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Weekly');
+        } else {
+          document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Monthly');
+        }
         document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('dddd MMMM Do LT'))
         document.getElementById('idbutt').href = ('/commuter/rent/' + this.id )
       });
