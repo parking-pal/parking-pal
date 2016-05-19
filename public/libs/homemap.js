@@ -75,14 +75,17 @@ function setMarkers(map, infowindow) {
         draggable: true,
         icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
       });
-    }
+      document.getElementById('latitude').value = (results[0].geometry.location.lat())
+      document.getElementById('longitude').value = (results[0].geometry.location.lng())
     } else {
       alert("Geocode was not successful for the following reason: " + status)
     };
     google.maps.event.addListener(myMarker, 'dragend', function(evt){
       $('.textinfo').text("Please confirm your marker before submitting.")
       var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
-      console.log(coord)
+      document.getElementById('latitude').value = (evt.latLng.lat());
+      document.getElementById('longitude').value = (evt.latLng.lng());
+      console.log("evt.latLng.lat()", evt.latLng.lat(), evt.latLng.lng());
     })
   });
 });
