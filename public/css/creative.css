@@ -112,6 +112,7 @@ button.butt {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.confirmation-wall,
 .account-wall
 {
     margin-top: 40px;
