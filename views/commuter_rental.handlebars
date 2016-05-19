@@ -1,10 +1,28 @@
 <header>
-<div>
-  The Commuter Rental page 
-      {{#if user}}
-
-      [{{spot.address}}]
-      ({{user.last_name}})
-      {{/if}}
-</div>
+  <br><br><br>
+  <div>
+  <h1 style="text-align: center; font-weight: 700; ">Rental Confirmation</h1>
+    <hr>
+     <br><br>
+      <div class="container">
+        <div>
+          <div class="login-form-position">
+            <div class="confirmation-wall">
+              <form class="form-confirmation" method="post">
+              <input type="hidden" name="redirect" value="{{redirect}}">
+                {{#if user}}
+                  <div>Thank you for your booking {{user.first_name}}</div>
+                  <div>You have tentatively confirmed a parking spot at {{spot.address}}</div>
+                  <div>Beginning on {{spot.availability}}</div>
+                  <div>Please respect the owner's and the neighbour's property and privacy.</div>
+                {{/if}}
+              <br>
+              <button class="btn btn-primary" type="submit">Confirm booking</button>                
+              </form>                
+            </div><br><br>              
+          </div>
+        </div>
+      </div>
+    <br><br>        
+  </div>
 </header>

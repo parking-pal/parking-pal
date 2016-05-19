@@ -19,19 +19,19 @@ module.exports = {
         createdAt: new Date(2016, 5, 7, 14, 7, 14),
         updatedAt: new Date(2016, 5, 7, 14, 7, 14)
       }, {
-        first_name: 'Samantha',
-        last_name: 'Carter',
-        email: 'sam@sg1.com',
+        first_name: 'Jack',
+        last_name: "O'Neil",
+        email: 'Jack@sg1.com',
         phone: '(250) 122-1334',
-        password: 'Samantha123',
+        password: 'Jack123',
         createdAt: new Date(2016, 5, 5, 9, 34, 45),
         updatedAt: new Date(2016, 5, 5, 9, 34, 45)
       }, {
-        first_name: 'Alice',
-        last_name: 'Cooper',
-        email: 'alice@nightmare.com',
+        first_name: 'Sammy',
+        last_name: 'Hagar',
+        email: 'sammy@cabowabo.com',
         phone: '(250) 123-4560',
-        password: 'Alice123',
+        password: 'Sammy123',
         createdAt: new Date(2016, 5, 12, 9, 45, 11),
         updatedAt: new Date(2016, 5, 12, 9, 45, 11)
       }, {
