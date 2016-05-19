@@ -68,13 +68,18 @@ function setMarkers(map, infowindow) {
         position: results[0].geometry.location,
         draggable: true,
       });
-      console.log(myMarker)
+      document.getElementById('latitude').value = (results[0].geometry.location.lat())
+      document.getElementById('longitude').value = (results[0].geometry.location.lng())
+
+      console.log("myMarker", results[0].geometry.location.lat(), results[0].geometry.location.lng());
     } else {
       alert("Geocode was not successful for the following reason: " + status)
     };
     google.maps.event.addListener(myMarker, 'dragend', function(evt){
       var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
-      console.log(coord)
+      document.getElementById('latitude').value = (evt.latLng.lat());
+      document.getElementById('longitude').value = (evt.latLng.lng());
+      console.log("evt.latLng.lat()", evt.latLng.lat(), evt.latLng.lng());
     })
   });
 });
