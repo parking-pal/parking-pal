@@ -26,6 +26,7 @@ function setMarkers(map) {
         avail: house.availability,
         id: house.id
       });
+      console.log(house)
       // if (marker.user == null) {
       //   marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
       // }
