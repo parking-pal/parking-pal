@@ -80,3 +80,4 @@ require('./controllers/api')(app);
 require('./controllers/login')(app);
 require('./controllers/sign-up')(app);
 require('./controllers/logout')(app);
+require('./controllers/dashboard')(app);
