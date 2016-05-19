@@ -26,6 +26,9 @@ module.exports = function(app) {
     else if (req.query.action == 'logout'){
       return res.redirect('/');
     }
+     else if (req.query.action == 'dashboard'){
+      return res.redirect('/dashboard');
+    }
     models.User.findAll().then(function(rows) {
       var data = { user: req.user, sess: req.session, url: req.session.redirectUrl };
 

@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Parking Pal</a>
+                <a class="navbar-brand page-scroll" href="/">Parking Pal</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,11 +61,14 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         {{#if user}}
+
                         <p class="navbar-text">
                             <strong>Hi,</strong>
                               {{user.first_name}}
                         </p>
                     </li>
+                    <li>
+                        <a href="/dashboard" action="dashboard">Dashboard</a>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
