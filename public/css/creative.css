@@ -12,6 +12,18 @@ table.homeowner-table {
     table-layout: auto;
 }
 
+.outterFromTo {
+    width: 100%;
+}
+
+.fromTo {
+    display: inline-block !important;
+}
+
+.fromTo label{
+    display: inline;
+    width: 100px;
+}
 .homeowner-wall {
     margin-left: 40px;
     margin-right: 40px;
