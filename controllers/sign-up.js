@@ -2,7 +2,7 @@ var models = require('../models');
 
 module.exports = function(app) {
   app.get('/sign-up', function (req, res) {
-    console.log("****app.get******");
+//    console.log("****app.get******");
     res.render('sign-up', {redirect: req.query.redirect})
   });
 
