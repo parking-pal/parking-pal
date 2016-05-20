@@ -22,6 +22,11 @@ var middleware = require('../lib/middleware');
 
   app.post('/commuter/rent/:parking_id', function(req, res) {
     models.ParkingSpot.findById(req.params.parking_id).then(function(spot) {
+      var rental = models.Rental.create({
+        UserId: req.user.id,
+        ParkingSpotId: spot.dataValues.id,
+        is_active: true
+      });
       var data = { user: req.user, spot: spot };
       // Database add here
       console.log("commuter_rental   app.post('/commuter/rent/:parking_id'", req.user.id, spot.dataValues.id);
