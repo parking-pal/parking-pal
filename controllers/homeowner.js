@@ -4,7 +4,7 @@ module.exports = function(app) {
 
     app.get('/homeowner', function (req, res) {
       var data = { user: req.user}
-//      console.log("homeowner.js  app.get('/homeowner'", data);
+      console.log("homeowner.js  app.get('/homeowner'", data);
       res.render('homeowner', data);
   });
 
@@ -14,7 +14,8 @@ module.exports = function(app) {
     res.render('homeowner', data);
 //    console.log("homeowner.js  app.post('/homeowner' 1", req.body, user_id);
     var avail = req.body.availability + ' 12:00:00.000 +00:00';
-//    console.log("homeowner.js  app.post('/homeowner' 2", data, data.user.id);
+    alert("hi");
+    console.log("homeowner.js  app.post('/homeowner' 2", req.body);
     var parkingSpot = models.ParkingSpot.create({
       address: req.body.address,
       availability: avail,
