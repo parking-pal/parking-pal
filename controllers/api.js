@@ -5,7 +5,9 @@ module.exports = function(app) {
 
   app.get('/api/parkingSpot', function (req, res) {
 
-    models.ParkingSpot.findAll().then(function(spots) {
+    models.ParkingSpot.findAll({
+        include: [{ model: models.Rental }]
+      }).then(function(spots) {
       res.json(spots);
     }).catch(function(error){
       console.log(JSON.stringify(error));
