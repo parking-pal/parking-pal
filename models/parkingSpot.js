@@ -18,6 +18,9 @@ module.exports = function(sequelize, DataTypes) {
         ParkingSpot.hasMany(models.Rental);
       }
     },
+    getterMethods: {
+      is_weekly: function() { return this.rental_length == 1; }
+    },
     instanceMethods: {
         toJSON: function(){
           var isActive = false;

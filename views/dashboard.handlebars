@@ -22,7 +22,9 @@
               <tr>
                 <td>{{address}}</td>
                 <td>{{availability}}</td>
-                <td>{{rental_length}}</td>
+                
+                <td>{{#if ParkingSpot.is_weekly }}Weekly{{else}}Monthly{{/if}}</td>
+                    
                 <td>{{rental_price}}</td>
                 <td>{{start_time}}</td>
                 <td>{{end_time}}</td>
@@ -46,13 +48,22 @@
               </tr>
             </thead>
             <tbody>
-            {{#each parkingSpots}}
+            {{#each Rental}}
               <tr>
-                <td>{{address}}</td>
-                <td>{{rental_length}}</td>
-                <td>{{rental_price}}</td>
-                <td>{{start_time}}</td>
-                <td>{{end_time}}</td>
+                <td>{{ParkingSpot.address}}</td>
+                {{#if ParkingSpot.is_weekly }}
+                <td>
+                      Weekly
+                </td>
+                    {{else}}
+                <td>
+                      Monthly
+                </td>
+                    {{/if}}  
+                </td>
+                <td>{{ParkingSpot.rental_price}}</td>
+                <td>{{ParkingSpot.start_time}}</td>
+                <td>{{ParkingSpot.end_time}}</td>
               </tr>
             {{/each}}  
             </tbody>
