@@ -12,19 +12,19 @@ var middleware = require('../lib/middleware');
   app.get('/commuter/rent/:parking_id', middleware.ensureAuthenticated, function (req, res) {    
     models.ParkingSpot.findById(req.params.parking_id).then(function(spot) {
       var data = { user: req.user, spot: spot };
-      console.log("commuter_rental   app.get('/commuter/rent/:parking_id'", data);
+//      console.log("commuter_rental   app.get('/commuter/rent/:parking_id'", data);
       res.render('commuter_rental', data);    
     }).catch(function(error){
-      console.log("ERROR***   commuter_rental   app.get('/commuter/rent/:parking_id'", data);
+//      console.log("ERROR***   commuter_rental   app.get('/commuter/rent/:parking_id'", data);
       console.log(JSON.stringify(error));
     });
-
   });
 
   app.post('/commuter/rent/:parking_id', function(req, res) {
     models.ParkingSpot.findById(req.params.parking_id).then(function(spot) {
       var data = { user: req.user, spot: spot };
-      console.log("commuter_rental   app.post('/commuter/rent/:parking_id'", data);
+      // Database add here
+      console.log("commuter_rental   app.post('/commuter/rent/:parking_id'", req.user.id, spot.dataValues.id);
       res.redirect('/');    
     });
   });

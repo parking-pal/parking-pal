@@ -32,7 +32,7 @@ module.exports = function(app) {
     models.User.findAll().then(function(rows) {
       var data = { user: req.user, sess: req.session, url: req.session.redirectUrl };
 
-      console.log("home.js", data.user);
+//      console.log("home.js", data.user);
 
       res.render('home', data);
     }).catch(function(error) {
