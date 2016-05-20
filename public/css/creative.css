@@ -3,6 +3,17 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+
+#infoleft {
+    float: left;
+    width: 50%
+}
+
+#inforight {
+    display: inline-block;
+    width: 50%
+}
+
 .textinfo {
     font-size: 20px;
 }

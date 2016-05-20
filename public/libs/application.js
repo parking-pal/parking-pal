@@ -13,29 +13,27 @@ function initMap() {
 
 
 
+
+
 function setMarkers(map) {
-  $.getJSON("/api/parkingSpot", function(houses) {
-    for (var i = 0; i < houses.length; i++) {
-      var house = houses[i];
-      var marker = new google.maps.Marker({
-        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-        position: {lat: parseFloat(house.latitude), lng: parseFloat(house.longitude)},
-        map: map,
-        address: house.address,
-        price: house.rental_price,
-        rental_length: house.rental_length,
-        user: house.UserId,
-        avail: house.availability,
-        id: house.id
-      });
-      $.getJSON("/api/rentals", function(spots) {
-        for (i = 0; i < spots.length; i++) {
-          var spot = spots[i];
-        }
-        if (spot.is_active) {
-          marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
-        }
-      });
+$.getJSON("/api/parkingSpot", function(houses) {
+  for (var i = 0; i < houses.length; i++) {
+    var house = houses[i];
+    var marker = new google.maps.Marker({
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      position: {lat: parseFloat(house.latitude), lng: parseFloat(house.longitude)},
+      map: map,
+      address: house.address,
+      price: house.rental_price,
+      rental_length: house.rental_length,
+      user: house.UserId,
+      avail: house.availability,
+      id: house.id,
+      act: house.is_rented
+    });
+    if (house.act) {
+      marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
+    }
       marker.addListener('click', toggleBounce);
       marker.addListener('click', function() {
         infowindow.open(map, this);
@@ -49,7 +47,7 @@ function setMarkers(map) {
         document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('dddd MMMM Do LT'))
         document.getElementById('idbutt').href = ('/commuter/rent/' + this.id )
       });
-    }
+    };
     function toggleBounce() {
       var self = this;
       self.setAnimation(google.maps.Animation.BOUNCE)
@@ -58,5 +56,5 @@ function setMarkers(map) {
       }, 2150);
     }
   });
-};
+  };
   var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>'+ '<a id="idbutt" href=""><button class="btn btn-default butt" id="butt">Rent</button></a></div>';
