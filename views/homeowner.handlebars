@@ -3,20 +3,23 @@
             <h1>Parking Spot Rental Information</h1>
               <table class="homeowner-table"> 
                 <tr>    
-                    <td>     
+                    <td id="infoleft">     
                             <!-- Homeowner Parking Spot Form -->
-                        <div class="homeowner-wall .col-lg-3">
+                        <div class="homeowner-wall">
                           <form method="post" action="/homeowner" class="parkingSpotForm">
     <!-- ADDRESS -->
+                                <p class="textinfo">Enter your address of the spot you wish to list</p>
                             <div>
-                                <input id="address" name="address" type="address" class="form-control" placeholder="Address" required autofocus>
+
+                                <input id="address" name="address" type="address" class="form-control" placeholder="Address" required autofocus />
                                 <div class='btn btn-warning' id="addbutt">Search</div>
-                                <p class="textinfo"></p>
+                                <div><label class="textinfo">Please click Search button and locate your exact parking spot on the map</label></div>
+                               
                             </div><br>
     <!-- Availability Date -->
                                       <div class="form-group">
                                         <div class='input-group date' id='datetimepicker12'>
-                                            <input type='text' class="form-control" name="availability"/>
+                                            <input type='text' class="form-control" name="availability" required />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -53,7 +56,7 @@
                                   </div>
                             </div><br>
     <!-- Rental Time Range -->
-                            <label>Select Time Parking Spot Is Available</label>
+                            <label>Select time the Parking Spot is available each day</label>
                             <div class="outterFromTo">
                             <div class="fromTo">
                                   <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true"><span class="input-group-addon">
@@ -79,12 +82,12 @@
                             <input type="hidden" id="longitude" name="longitude" value="{{longitude}}" />
                             <br><br>
                             <div>
-                            <button type="submit" class="btn btn-default btn-xl wow tada">Submit</button>
+                            <button type="submit" class="btn btn-default btn-xl wow tada" id="orangebutt" disabled>Submit</button>
                             </div>
                            </form> 
                         </div>  
                     </td>                 
-                    <td>
+                    <td id="inforight">
                       <script src="/public/libs/homemap.js"></script>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
                      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI8bTRZVfp9K-DER1MfqkYsOrPKiVxwYM  

@@ -60,9 +60,9 @@ function setMarkers(map, infowindow) {
    + '<h2 id="avail"></h2>'
    + '<p id="address"></p></div>';
 
-   var mark = 
    $("#addbutt").on("click", function() {
-    $('.textinfo').text('Please drag marker onto your parking spot');
+    $('.textinfo').text('Please drag the marker onto your parking spot');
+    $(this).css
     var geocoder = new google.maps.Geocoder();
     var address = $("#address").val();
     geocoder.geocode( { 'address': address}, function(results, status) {
@@ -83,7 +83,7 @@ function setMarkers(map, infowindow) {
         document.getElementById('latitude').value = (results[0].geometry.location.lat())
         document.getElementById('longitude').value = (results[0].geometry.location.lng())
       } else {
-        alert("Geocode was not successful for the following reason: " + status)
+        alert("Please enter a valid address into the box")
       };
       google.maps.event.addListener(myMarker, 'dragend', function(evt){
         $('.textinfo').text("Please confirm your marker before submitting.")
