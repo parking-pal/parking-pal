@@ -14,7 +14,6 @@ module.exports = function(app) {
     res.render('homeowner', data);
 //    console.log("homeowner.js  app.post('/homeowner' 1", req.body, user_id);
     var avail = req.body.availability + ' 12:00:00.000 +00:00';
-    alert("hi");
     console.log("homeowner.js  app.post('/homeowner' 2", req.body);
     var parkingSpot = models.ParkingSpot.create({
       address: req.body.address,
