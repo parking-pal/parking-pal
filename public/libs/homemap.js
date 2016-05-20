@@ -62,7 +62,7 @@ function setMarkers(map, infowindow) {
 
    var mark = 
    $("#addbutt").on("click", function() {
-    $('.textinfo').text('Please drag marker onto your parking spot');
+    $('.textinfo').text('Please drag the marker onto your parking spot');
     $(this).css
     var geocoder = new google.maps.Geocoder();
     var address = $("#address").val();
