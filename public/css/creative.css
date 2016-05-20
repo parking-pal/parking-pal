@@ -130,6 +130,7 @@ button.butt {
 }
 .form-control {
     text-align: center;
+    min-width: 5em;
 }
 .form-signin .form-control
 {
