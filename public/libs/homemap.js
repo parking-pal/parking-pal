@@ -60,7 +60,6 @@ function setMarkers(map, infowindow) {
    + '<h2 id="avail"></h2>'
    + '<p id="address"></p></div>';
 
-   var mark = 
    $("#addbutt").on("click", function() {
     $('.textinfo').text('Please drag the marker onto your parking spot');
     $(this).css
