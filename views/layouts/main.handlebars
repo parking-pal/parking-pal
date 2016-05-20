@@ -58,23 +58,23 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        {{#if user}}
+                        <p class="navbar-text">
+                            <strong>Hi, {{user.first_name}}</strong>
+                        </p>
+                        {{/if}}
+
                 <ul class="nav navbar-nav navbar-right">
                     
                         {{#if user}}
                     <li>
-                        <p class="navbar-text">
-                            <strong>Hi,</strong>
-                              {{user.first_name}}
-                        </p>
-                    </li>
-                    <li>
                         <a href="/dashboard" action="dashboard">Dashboard</a>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    </li>
+                      <li>
                        <a href="/logout" action="logout">Logout</a>
                     </li>
                         {{else}}
+                    <li>
                         <a href="/login">Login</a>
                     </li>
                         {{/if}}
@@ -99,27 +99,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <div class="service-box"><br>
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i><br><br>
                         <h3>Reliable Parking Spots</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <div class="service-box"><br>
+                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i><br><br>
                         <h3>Ready to Park</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <div class="service-box"><br>
+                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i><br><br>
                         <h3>Up to Date Availability</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3><img src="http://www.hays.ca/cs/groups/hays_common/@ca/@content/documents/promotionalcontent/hays_1210144.jpg"> Can Go Stick It</h3>
+                        <img src="./public/img/im_nows.png" class="fa-heart wow bounceIn text-primary" data-wow-delay=".3s">
+                        <h3>Can Go Stick It</h3>
                         <p class="text-muted">You have to make your websites with love these days!</p>
                     </div>
                 </div>
