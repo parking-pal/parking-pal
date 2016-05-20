@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
 .fa {
  width: 60px;
@@ -16,7 +16,7 @@
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
 }
-.fa-angle-double-down:before {content: "\f103";}
+/*.fa-angle-double-down:before {content: "\f103";}*/
 
 .bounce {
  position: absolute;
@@ -57,6 +57,7 @@
  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
  40% {transform: translateY(-30px);}
  60% {transform: translateY(-15px);}
+}
 
 #infoleft {
     float: left;
