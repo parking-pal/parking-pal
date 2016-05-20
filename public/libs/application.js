@@ -11,7 +11,6 @@ function initMap() {
 }
 
 function setMarkers(map) {
-  var $ = jQuery;
   $.getJSON("/api/parkingSpot", function(houses) {
     for (var i = 0; i < houses.length; i++) {
       var house = houses[i];
@@ -26,7 +25,6 @@ function setMarkers(map) {
         avail: house.availability,
         id: house.id
       });
-      console.log(house)
       // if (marker.user == null) {
       //   marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
       // }

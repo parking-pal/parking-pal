@@ -37,7 +37,11 @@ function setMarkers(map, infowindow) {
         // };
         document.getElementById('address').innerHTML = ('<h2><small>Address: </small></h2>' + this.address)
         document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00')
-        document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ this.rental_length+' days')
+        if (this.rental_length == 1) {
+          document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Weekly');
+        } else {
+          document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Monthly');
+        }
         document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('dddd MMMM Do LT'))
       });
     }
