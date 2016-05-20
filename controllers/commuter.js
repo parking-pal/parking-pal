@@ -2,7 +2,7 @@ var models = require('../models');
 
 var middleware = require('../lib/middleware');
 
-module.exports = function(app) {
+  module.exports = function(app) {
   app.get('/commuter', function (req, res) {
     var data = { user: req.user}
     console.log("commuter_rental   app.get('/commuter'", data);
