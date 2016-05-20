@@ -1,8 +1,11 @@
 <header>
-  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+      <div class="">
+          <h1>You currently don't have any parking spots listed, or rentals!</h2><br><br>
+      </div>
       <div class="dashboard">
-        <div class="container">
-          <h2>Your Parking Spots!</h2>        
+        <div>
+          <h2>Parking Spots Listed</h2>        
           <table class="table table-hover">
             <thead>
               <tr>
@@ -29,4 +32,31 @@
           </table>
       </div>
     </div>
+    <br><br>
+     <div class="dashboard">
+          <h2>Rentals</h2>        
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Address </th>
+                <th>Rental Length</th>
+                <th>Rental Price</th>
+                <th>Rental Time (From)</th>
+                <th>Rental Time (Until)</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each parkingSpots}}
+              <tr>
+                <td>{{address}}</td>
+                <td>{{rental_length}}</td>
+                <td>{{rental_price}}</td>
+                <td>{{start_time}}</td>
+                <td>{{end_time}}</td>
+              </tr>
+            {{/each}}  
+            </tbody>
+          </table>
+      </div>
+    </div><br><br>
 </header>
