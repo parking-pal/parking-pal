@@ -62,6 +62,7 @@ function setMarkers(map, infowindow) {
 
    $("#addbutt").on("click", function() {
     $('.textinfo').text('Please drag the marker onto your parking spot');
+    $("#orangebutt").prop("disabled", false);
     $(this).css
     var geocoder = new google.maps.Geocoder();
     var address = $("#address").val();
@@ -86,7 +87,7 @@ function setMarkers(map, infowindow) {
         alert("Please enter a valid address into the box")
       };
       google.maps.event.addListener(myMarker, 'dragend', function(evt){
-        $('.textinfo').text("Please confirm your marker before submitting.")
+        $('.textinfo').text("Good job, you Google Maps guru. Your exact parking spot has been set!")
         var coord = (evt.latLng.lat().toFixed(6) + evt.latLng.lng().toFixed(6));
         document.getElementById('latitude').value = (evt.latLng.lat());
         document.getElementById('longitude').value = (evt.latLng.lng());
