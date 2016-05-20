@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "parkingpal_production",
-    "host": "127.0.0.1",
+    "username": "ztijeihqrheoms",
+    "password": "yjfpu1LCskq7VC5EDiDxRUbga5",
+    "database": "dho3n3qvm67eb",
+    "host": "ec2-54-235-102-190.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
