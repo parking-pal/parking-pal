@@ -1,8 +1,11 @@
 <header>
-  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+      <div class="">
+          <h1>You currently don't have any parking spots listed, or rentals!</h2><br><br>
+      </div>
       <div class="dashboard">
-        <div class="container">
-          <h2>Your Parking Spots!</h2>        
+        <div>
+          <h2>Parking Spots Listed</h2>        
           <table class="table table-hover">
             <thead>
               <tr>
@@ -19,7 +22,9 @@
               <tr>
                 <td>{{address}}</td>
                 <td>{{availability}}</td>
-                <td>{{rental_length}}</td>
+                
+                <td>{{#if ParkingSpot.is_weekly }}Weekly{{else}}Monthly{{/if}}</td>
+                    
                 <td>{{rental_price}}</td>
                 <td>{{start_time}}</td>
                 <td>{{end_time}}</td>
@@ -29,4 +34,40 @@
           </table>
       </div>
     </div>
+    <br><br>
+     <div class="dashboard">
+          <h2>Rentals</h2>        
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Address </th>
+                <th>Rental Length</th>
+                <th>Rental Price</th>
+                <th>Rental Time (From)</th>
+                <th>Rental Time (Until)</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each Rental}}
+              <tr>
+                <td>{{ParkingSpot.address}}</td>
+                {{#if ParkingSpot.is_weekly }}
+                <td>
+                      Weekly
+                </td>
+                    {{else}}
+                <td>
+                      Monthly
+                </td>
+                    {{/if}}  
+                </td>
+                <td>{{ParkingSpot.rental_price}}</td>
+                <td>{{ParkingSpot.start_time}}</td>
+                <td>{{ParkingSpot.end_time}}</td>
+              </tr>
+            {{/each}}  
+            </tbody>
+          </table>
+      </div>
+    </div><br><br>
 </header>
