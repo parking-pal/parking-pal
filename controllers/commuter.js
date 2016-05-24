@@ -5,7 +5,7 @@ var middleware = require('../lib/middleware');
   module.exports = function(app) {
   app.get('/commuter', function (req, res) {
     var data = { user: req.user}
-    console.log("commuter_rental   app.get('/commuter'", data);
+    console.log("**commuter_rental   app.get('/commuter'", data);
     res.render('commuter', data);
   });
 
@@ -17,7 +17,7 @@ var middleware = require('../lib/middleware');
       //   Thu Jun 16 2016 12:00:00 GMT-0700 (PDT)
   //    var ps2 = ps.split(' '); //getFullYear() + ' ' + ps.getMonth() + ' ' + ps.getDay();
   //    var ps3 = ps2[0] + ' ' + ps2[1] + ' ' + ps2[2] + ' ' + ps2[3]; 
-      console.log("commuter_rental   app.get('/commuter/rent/:parking_id'", spot.dataValues.availability);
+      console.log("**commuter_rental   app.get('/commuter/rent/:parking_id'", spot.dataValues.availability);
       res.render('commuter_rental', data);    
     }).catch(function(error){
 //      console.log("ERROR***   commuter_rental   app.get('/commuter/rent/:parking_id'", data);
@@ -27,14 +27,14 @@ var middleware = require('../lib/middleware');
 
   app.post('/commuter/rent/:parking_id', function(req, res) {
     models.ParkingSpot.findById(req.params.parking_id).then(function(spot) {
+      var data = { user: req.user, spot: spot };      
+      console.log("**commuter_rental   app.post('/commuter/rent/:parking_id'", req.user.id, spot.dataValues.id);
+
       var rental = models.Rental.create({
         UserId: req.user.id,
         ParkingSpotId: spot.dataValues.id,
         is_active: true
       });
-      var data = { user: req.user, spot: spot };
-      
-      console.log("commuter_rental   app.post('/commuter/rent/:parking_id'", req.user.id, spot.dataValues.id);
       res.redirect('/');    
     });
   });
