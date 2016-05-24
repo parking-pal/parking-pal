@@ -6,6 +6,12 @@
 
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
+.stripe-button-el span {
+    background: #f05f40 !important;
+}
+button.stripe-button-el {
+    background: #f05f40;
+}
 
 
 .fa {
