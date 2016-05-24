@@ -3,7 +3,7 @@ var passport = require('passport');
 module.exports = function(app) {
   app.get('/login/:usertype?/:id?', function (req, res) {
     var data = { url: req.session.redirectUrl}
-//    console.log("app.get('/login/:usertype?/:id?'", data);
+    console.log("login.js   app.get('/login/:usertype?/:id?'", data);
     res.render('login');
   });
 

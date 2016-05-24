@@ -2,7 +2,7 @@ var models = require('../models');
 
 module.exports = function(app) {
   app.get('/', function (req, res) {
-    var data = { url: req.session.redirectUrl, query: req.query.action };
+    var data = { url: req.session.redirectUrl, query: req.query.action, user: req.user };
 
     console.log("home.js at the top app.get('/'", data);
     if (req.query.action == 'commuter'){
