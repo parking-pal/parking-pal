@@ -10,11 +10,6 @@ function initMap() {
   });
 }
 
-
-
-
-
-
 function setMarkers(map) {
 $.getJSON("/api/parkingSpot", function(houses) {
   for (var i = 0; i < houses.length; i++) {
@@ -32,10 +27,22 @@ $.getJSON("/api/parkingSpot", function(houses) {
       act: house.is_active
     });
     if (marker.act) {
+       this.active = true;
+  //    console.log("!!!", this.active);
+  //   console.log("###", marker.act);
       marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
     }
-      marker.addListener('click', toggleBounce);
-      marker.addListener('click', function() {
+    else
+    {          
+      this.active = false;
+  //    console.log("!!!", this.active);
+
+ //     document.getElementById('idbutt').href = ('/commuter/rent/' + this.id );
+    }
+   //   console.log("!!!2", this.active);
+
+    marker.addListener('click', toggleBounce);
+    marker.addListener('click', function() {
         infowindow.open(map, this);
         document.getElementById('address').innerHTML = ('<h4><small>Address: </small></h4>' + this.address);
         document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00');
@@ -44,8 +51,19 @@ $.getJSON("/api/parkingSpot", function(houses) {
         } else {
           document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Monthly');
         }
-        document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('dddd MMMM Do LT'))
-        document.getElementById('idbutt').href = ('/commuter/rent/' + this.id )
+        document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('ddd MMM Do, YYYY'))
+          console.log("@@@", marker.act);
+  //    console.log("!!!3", this.act);
+        if (!this.act)
+        {
+          console.log("&&&", this.act);
+          document.getElementById('idbutt').href = ('/commuter/rent/' + this.id );
+          document.getElementById('idbutt').style.visibility = "visible";
+        }
+        else
+        {
+          document.getElementById('idbutt').style.visibility = "hidden";
+        }
       });
     };
     function toggleBounce() {
