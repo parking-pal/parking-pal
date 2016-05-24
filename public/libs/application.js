@@ -29,9 +29,9 @@ $.getJSON("/api/parkingSpot", function(houses) {
       user: house.UserId,
       avail: house.availability,
       id: house.id,
-      act: house.is_rented
+      act: house.is_active
     });
-    if (house.act) {
+    if (marker.act) {
       marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
     }
       marker.addListener('click', toggleBounce);
