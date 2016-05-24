@@ -8,10 +8,7 @@ module.exports = function(app) {
         data.parkingSpots = spots;
         models.Rental.findAll({ include: [{ model: models.ParkingSpot }], where: {UserId: req.user.id}}).then(function(rentals){
           data.Rental = rentals;
-          // models.ParkingSpot.findAndCountAll({ include: [{ test: models.ParkingSpot, required: true}], where: {UserId: req.user.id}}).then(function(listings){
-          //   data.parkingSpots = listings;
                res.render('dashboard', data);
-          // });
         });
       }).catch(function(error){
       console.log(JSON.stringify(error));

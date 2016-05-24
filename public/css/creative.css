@@ -6,7 +6,15 @@
 
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
+.home-button-1 {
+    display: inline-block;
+    float: left;
+}
 
+.home-button-2 {
+    display: inline-block;
+    float: right;
+}
 
 .fa {
  width: 60px;
