@@ -8,7 +8,6 @@
         <div>
           <div class="login-form-position">
             <div class="confirmation-wall">
-              <form class="form-confirmation" method="post">
               <input type="hidden" name="redirect" value="{{redirect}}">
                 {{#if user}}
                   <div>Thank you for your booking {{user.first_name}}.</div>
@@ -17,8 +16,21 @@
                   <div>Please respect the owner's and the neighbour's property and privacy.</div>
                 {{/if}}
               <br>
-              <button class="btn btn-primary" type="submit">Confirm booking</button>                
-              </form>                
+              <form class="form-confirmation" method="POST">
+                <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_yhwrDaHZJtuijc3LZNNTfjch"
+                data-amount={{spot.rental_price}}00 
+                data-name="Parking Pal"
+                data-description="Parking made ez"
+                data-image="http://cdn.shopify.com/s/files/1/0885/3586/products/thumbnail0_large.jpg?v=1433951403"
+                data-locale="auto"
+                data-email={{user.email}}
+                data-label="Pay with Credit Card"
+                data-allow-remember-me=false
+                >
+              </script>
+            </form>
             </div><br><br>              
           </div>
         </div>
