@@ -1,8 +1,6 @@
 <header>
   <br><br><br><br><br><br>
-      <div class="">
-          <h1>You currently don't have any parking spots listed, or rentals!</h2><br><br>
-      </div>
+
       <div class="dashboard">
         <div>
           <h2>Parking Spots Listed</h2>        
@@ -34,6 +32,7 @@
           </table>
       </div>
     </div>
+ 
     <br><br>
      <div class="dashboard">
           <h2>Rentals</h2>        
@@ -51,16 +50,7 @@
             {{#each Rental}}
               <tr>
                 <td>{{ParkingSpot.address}}</td>
-                {{#if ParkingSpot.is_weekly }}
-                <td>
-                      Weekly
-                </td>
-                    {{else}}
-                <td>
-                      Monthly
-                </td>
-                    {{/if}}  
-                </td>
+                <td>{{#if ParkingSpot.is_weekly }}Weekly{{else}}Monthly{{/if}}</td>
                 <td>{{ParkingSpot.rental_price}}</td>
                 <td>{{ParkingSpot.start_time}}</td>
                 <td>{{ParkingSpot.end_time}}</td>
@@ -70,4 +60,5 @@
           </table>
       </div>
     </div><br><br>
+
 </header>
