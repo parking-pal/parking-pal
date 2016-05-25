@@ -66,7 +66,10 @@
                 <td>{{ParkingSpot.rental_price}}</td>
                 <td>{{ParkingSpot.start_time}}</td>
                 <td>{{ParkingSpot.end_time}}</td>
-                <td>{{#if is_active}}&#x2713<button class="active" data-id="{{ParkingSpotId}}">Cancel Auto Renewal</button>{{else}}&#x2717<button class="active" data-id="{{ParkingSpotId}}">Auto Renewal Cancelled</button>{{/if}}</td>
+                <td>{{#if is_active}}<a class="active btn btn-default btn-l wow tada" data-id="{{ParkingSpotId}}">Cancel Auto Renewal</a>{{else}}<a class="renewal-cancelled">Auto Renewal Cancelled</a><div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong> You have cancelled your parking spot starting next week.
+                </div>{{/if}}</td>
               </tr>
             {{/each}}  
             </tbody>
@@ -86,20 +89,22 @@
     $('.cancel').on('click', function(){  
       var id = $(this).data('id');
          $.post( "/api/parkingSpot/"+id+"/cancel", function( data ) {
-            console.log( data );
-            location.reload();
+           console.log( data );
+           location.reload();
         });
     });
   });
-   $(function(){
-    $('.active').on('click', function(){  
-      var id = $(this).data('ParkingSpotId');
-         $.post( "/api/Rental/"+id+"/deactivate", function( data ) {
+    $(function(){
+      $('.active').on('click', function(){  
+        var r = confirm('Once you cancel your parking spot, it is available to all Parking Pal users');
+        if (r == true){
+          var id = $(this).data('id');
+          $.post( "/api/rentals/"+id+"/active", function( data ) {
             console.log( data );
             location.reload();
-        });
+          });
+        }
+      });
     });
-  });
-
 </script>
 </header>

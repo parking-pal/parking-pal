@@ -40,9 +40,9 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/api/Rental/:ParkingSpotId/deactivate', function (req, res, next) {
-    models.Rental.findById(req.params.ParkingSpotId).then(function(rental){
-      rental.is_active = false;
+  app.post('/api/rentals/:id/active', function (req, res, next) {
+    models.Rental.findById(req.params.id).then(function(rental){
+      rental.is_active = !rental.is_active;
       rental.save();
       res.json(rental);
     }).catch(function(error) {
