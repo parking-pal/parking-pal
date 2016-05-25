@@ -8,7 +8,11 @@
                         <div class="homeowner-wall">
                           <form method="post" action="/homeowner" class="parkingSpotForm">
     <!-- ADDRESS -->
+                          {{#if spotExists}}
+                                <p class="textinfo">{{spotExists}} already exists in the database</p>
+                          {{else}}
                                 <p class="textinfo">Enter your address of the spot you wish to list</p>
+                          {{/if}}
                             <div>
 
                                 <input id="address" name="address" type="address" class="form-control" placeholder="Address" required autofocus />
@@ -115,5 +119,17 @@
                         </div>
                     </td>
                 </tr>          
-              </table>      
+              </table>    
+<!--     <script>
+      $(function(){
+        $('.active').on('click', function(){  
+          var r = alert('Spot already exists');
+          var id = $(this).data('id');
+          $.post( "/api/rentals/"+id+"/active", function( data ) {
+            console.log( data );
+            location.reload();
+          });
+        });
+      });  
+    </script> -->
         </header>
