@@ -14,6 +14,7 @@ function setMarkers(map) {
 $.getJSON("/api/parkingSpot", function(houses) {
   for (var i = 0; i < houses.length; i++) {
     var house = houses[i];
+    if (!(house.cancelled)) {
     var marker = new google.maps.Marker({
       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
       position: {lat: parseFloat(house.latitude), lng: parseFloat(house.longitude)},
@@ -27,19 +28,8 @@ $.getJSON("/api/parkingSpot", function(houses) {
       act: house.is_active
     });
     if (marker.act) {
-       this.active = true;
-  //    console.log("!!!", this.active);
-  //   console.log("###", marker.act);
       marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
     }
-    else
-    {          
-      this.active = false;
-  //    console.log("!!!", this.active);
-
- //     document.getElementById('idbutt').href = ('/commuter/rent/' + this.id );
-    }
-   //   console.log("!!!2", this.active);
 
     marker.addListener('click', toggleBounce);
     marker.addListener('click', function() {
@@ -52,11 +42,9 @@ $.getJSON("/api/parkingSpot", function(houses) {
           document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Monthly');
         }
         document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('ddd MMM Do, YYYY'))
-          console.log("@@@", marker.act);
-  //    console.log("!!!3", this.act);
+
         if (!this.act)
         {
-          console.log("&&&", this.act);
           document.getElementById('idbutt').href = ('/commuter/rent/' + this.id );
           document.getElementById('idbutt').style.visibility = "visible";
         }
@@ -73,6 +61,7 @@ $.getJSON("/api/parkingSpot", function(houses) {
         self.setAnimation(null);
       }, 2150);
     }
-  });
   };
+  });
+}
   var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>'+ '<a id="idbutt" href=""><button class="btn btn-default butt" id="butt">Rent</button></a></div>';
