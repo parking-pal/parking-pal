@@ -29,4 +29,14 @@ module.exports = function(app) {
       console.log(JSON.stringify(error));
     });
   });
+  app.post('/api/parkingSpot/:id/cancel', function (req, res, next) {
+    models.ParkingSpot.findById(req.params.id).then(function(spot){
+      spot.cancelled = !(spot.cancelled);
+      spot.save();
+      res.json(spot);
+    }).catch(function(error) {
+      console.log(JSON.stringify(error));
+      res.status(500).send('Something is not kocher');
+    });
+  });
 }

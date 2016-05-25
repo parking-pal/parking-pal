@@ -7,9 +7,8 @@ module.exports = function(app) {
       models.ParkingSpot.findAll({ where: {UserId: req.user.id}}).then(function(spots) {
         data.parkingSpots = spots;
         models.Rental.findAll({ include: [{ model: models.ParkingSpot }], where: {UserId: req.user.id}}).then(function(rentals){
-          // console.log(rentals[0].dataValues);
           data.Rental = rentals;
-          res.render('dashboard', data);
+               res.render('dashboard', data);
         });
       }).catch(function(error){
       console.log(JSON.stringify(error));

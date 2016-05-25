@@ -11,7 +11,6 @@ module.exports = function(app) {
   app.post('/homeowner', middleware.ensureAuthenticated, function(req, res) {
     var data = { user: req.user}
     var user_id = data.user.id;
-    res.render('homeowner', data);
 //    console.log("homeowner.js  app.post('/homeowner' 1", req.body, user_id);
     var avail = req.body.availability + ' 12:00:00.000 +00:00';
     console.log("homeowner.js  app.post('/homeowner' 2", req.body);
@@ -24,19 +23,11 @@ module.exports = function(app) {
       longitude: req.body.longitude,
       start_time: req.body.start_time,
       end_time: req.body.end_time,
-      UserId: user_id
+      UserId: user_id,
+      cancelled: false
     }).then (function(parkingSpot) {
- //   var data2 = { user: req.user.id, }
-//    console.log(data2.id);
-    // req.login(parkingSpot, function(err){
-    //    if (req.session.redirectUrl) {
-    //      res.redirect(req.session.redirectUrl);
-    //      req.session.redirectUrl = null
-    //      return 
-    //    }
-    //   else
-    //     return res.redirect('/');  
-    });
+      return res.redirect('/dashboard');
+    });  
   });
 }  
 

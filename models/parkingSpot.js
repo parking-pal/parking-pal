@@ -10,7 +10,8 @@ module.exports = function(sequelize, DataTypes) {
     longitude: DataTypes.DECIMAL,
     start_time: DataTypes.STRING,
     end_time: DataTypes.STRING,
-    is_rented: DataTypes.VIRTUAL
+    is_rented: DataTypes.VIRTUAL,
+    cancelled: DataTypes.BOOLEAN
     }, {
     classMethods: {
       associate: function(models) {

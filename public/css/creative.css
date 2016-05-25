@@ -6,13 +6,23 @@
 
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
+
+.home-button-1 {
+    display: inline-block;
+    float: left;
+}
 .stripe-button-el span {
     background: #f05f40 !important;
 }
 button.stripe-button-el {
     background: #f05f40;
+
 }
 
+.home-button-2 {
+    display: inline-block;
+    float: right;
+}
 
 .fa {
  width: 60px;
