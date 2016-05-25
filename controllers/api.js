@@ -42,7 +42,7 @@ module.exports = function(app) {
 
   app.post('/api/rentals/:id/active', function (req, res, next) {
     models.Rental.findById(req.params.id).then(function(rental){
-      rental.is_active = !rental.is_active;
+      rental.is_active = false;
       rental.save();
       res.json(rental);
     }).catch(function(error) {

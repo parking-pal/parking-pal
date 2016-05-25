@@ -6,6 +6,11 @@
 
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
+.homepage-p p {
+    font-size: 3em !important;
+    color: white;
+}
+
 
 .dashboard-find-spot p {
     font-size: 2em;
