@@ -12,8 +12,14 @@ var middleware = require('../lib/middleware');
   app.get('/commuter/rent/:parking_id', middleware.ensureAuthenticated, function (req, res) {    
     models.ParkingSpot.findById(req.params.parking_id).then(function(spot) {
  //     var ps = new Date(spot.dataValues.availability).toDateString();
+ var parkPrice = 0
+  if (spot.rental_length == 1) {
+    parkPrice = spot.rental_price * 500;
+  } else {
+      parkPrice = spot.rental_price * 2000;
+  }
       spot.dataValues.availability = new Date(spot.dataValues.availability).toDateString();
-      var data = { user: req.user, spot: spot };
+      var data = { user: req.user, spot: spot, parkPrice: parkPrice };
       //   Thu Jun 16 2016 12:00:00 GMT-0700 (PDT)
   //    var ps2 = ps.split(' '); //getFullYear() + ' ' + ps.getMonth() + ' ' + ps.getDay();
   //    var ps3 = ps2[0] + ' ' + ps2[1] + ' ' + ps2[2] + ' ' + ps2[3]; 

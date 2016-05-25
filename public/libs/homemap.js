@@ -35,8 +35,8 @@ function setMarkers(map, infowindow) {
         // if (this.user == null) {
         //   document.getElementById('butt').a = 'hi'
         // };
-        document.getElementById('address').innerHTML = ('<h2><small>Address: </small></h2>' + this.address)
-        document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00')
+        document.getElementById('address').innerHTML = ('<h4><small>Address: </small></h4>' + this.address)
+        document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00'+'/day')
         if (this.rental_length == 1) {
           document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Weekly');
         } else {
@@ -55,9 +55,9 @@ function setMarkers(map, infowindow) {
   });
 };
   var contentString = 
-     '<div id="infowin"><h2 id="price"></h2>'
-   + '<h2 id="rental_length"></h2>' 
-   + '<h2 id="avail"></h2>'
+     '<div id="infowin"><h4 id="price"></h4>'
+   + '<h4 id="rental_length"></h4>' 
+   + '<h4 id="avail"></h4>'
    + '<p id="address"></p></div>';
 
    $("#addbutt").on("click", function() {
