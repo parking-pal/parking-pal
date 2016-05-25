@@ -39,4 +39,15 @@ module.exports = function(app) {
       res.status(500).send('Something is not kocher');
     });
   });
+
+  app.post('/api/Rental/:ParkingSpotId/deactivate', function (req, res, next) {
+    models.Rental.findById(req.params.ParkingSpotId).then(function(rental){
+      rental.is_active = false;
+      rental.save();
+      res.json(rental);
+    }).catch(function(error) {
+      console.log(JSON.stringify(error));
+      res.status(500).send('Something is no bueno');
+    });
+  });
 }
