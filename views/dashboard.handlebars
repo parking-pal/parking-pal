@@ -38,7 +38,7 @@
     <div class="dashboard-find-spot">
         <p>You currently don't have any parking spots listed for rent!</p>
             <form method="get" action="/homeowner">
-              <button name="action" value="homeowner" class="btn btn-default btn-xl wow tada">List Parking</button>
+              <button name="action" value="homeowner" class="btn btn-default btn-xl wow tada">List My Parking Spot</button>
             </form>
     </div>
     {{/if}}
@@ -66,10 +66,7 @@
                 <td>{{ParkingSpot.rental_price}}</td>
                 <td>{{ParkingSpot.start_time}}</td>
                 <td>{{ParkingSpot.end_time}}</td>
-                <td>{{#if is_active}}<a class="active btn btn-default btn-l wow tada" data-id="{{ParkingSpotId}}">Cancel Auto Renewal</a>{{else}}<a class="renewal-cancelled">Auto Renewal Cancelled</a><div class="alert alert-success">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> You have cancelled your parking spot starting next week.
-                </div>{{/if}}</td>
+                <td>{{#if is_active}}<a class="active btn btn-default btn-l wow tada" data-id="{{ParkingSpotId}}">Cancel Auto Renewal</a>{{else}}<a class="renewal-cancelled">Auto Renewal Cancelled</a>{{/if}}</td>
               </tr>
             {{/each}}  
             </tbody>
@@ -80,7 +77,7 @@
     <div class="dashboard-find-spot">
         <p>You currently aren't renting any parking spots!</p>
             <br><form method="get" action="/commuter">
-                <button name="action" value="commuter" class="btn btn-default btn-xl wow tada">Find Parking</button>
+                <button name="action" value="commuter" class="btn btn-default btn-xl wow tada">Find A Parking Spot</button>
             </form><br><br>
     </div>
     {{/if}}
