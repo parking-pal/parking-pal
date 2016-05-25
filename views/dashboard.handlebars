@@ -40,7 +40,6 @@
             <form method="get" action="/homeowner">
               <button name="action" value="homeowner" class="btn btn-default btn-xl wow tada">List My Parking Spot</button>
             </form>
-    </div>
     {{/if}}
     <br><br>{{#if Rental.length}}
      <div class="dashboard">
@@ -54,7 +53,6 @@
                 <th>Rental Price ($/day)</th>
                 <th>Rental Time (From)</th>
                 <th>Rental Time (Until)</th>
-                <th>Active</th>
               </tr>
             </thead>
             <tbody>
@@ -79,7 +77,6 @@
             <br><form method="get" action="/commuter">
                 <button name="action" value="commuter" class="btn btn-default btn-xl wow tada">Find A Parking Spot</button>
             </form><br><br>
-    </div>
     {{/if}}
 <script>
   $(function(){

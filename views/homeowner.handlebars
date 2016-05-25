@@ -8,7 +8,11 @@
                         <div class="homeowner-wall">
                           <form method="post" action="/homeowner" class="parkingSpotForm">
     <!-- ADDRESS -->
+                          {{#if spotExists}}
+                                <p class="textinfo">{{spotExists}} already exists in the database</p>
+                          {{else}}
                                 <p class="textinfo">Enter your address of the spot you wish to list</p>
+                          {{/if}}
                             <div>
 
                                 <input id="address" name="address" type="address" class="form-control" placeholder="Address" required autofocus />
@@ -80,6 +84,21 @@
                             <input type="hidden" id="longitude" name="longitude" value="{{longitude}}" />
                             <br><br>
                             <div>
+              <!--                 <form class="form-confirmation" id="orangebutt" method="POST"> -->
+                              <!--   <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_yhwrDaHZJtuijc3LZNNTfjch"
+                                data-amount={{spot.rental_price}}00 
+                                data-name="Parking Pal"
+                                data-description="Parking made ez"
+                                data-image="http://cdn.shopify.com/s/files/1/0885/3586/products/thumbnail0_large.jpg?v=1433951403"
+                                data-locale="auto"
+                                data-email={{user.email}}
+                                data-label="Add card to receive payments"
+                                data-allow-remember-me=false
+                                >
+                              </script> -->
+                            <!-- </form> -->
                             <button type="submit" class="btn btn-default btn-xl wow tada" id="orangebutt" disabled>Submit</button>
                             </div>
                            </form> 
@@ -100,5 +119,17 @@
                         </div>
                     </td>
                 </tr>          
-              </table>      
+              </table>    
+<!--     <script>
+      $(function(){
+        $('.active').on('click', function(){  
+          var r = alert('Spot already exists');
+          var id = $(this).data('id');
+          $.post( "/api/rentals/"+id+"/active", function( data ) {
+            console.log( data );
+            location.reload();
+          });
+        });
+      });  
+    </script> -->
         </header>

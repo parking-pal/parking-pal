@@ -7,7 +7,7 @@ module.exports = function(app) {
   });
 
   app.post('/sign-up', function(req, res) {
-    console.log(req.body.password);
+    console.log(req.body);
     var user = models.User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
