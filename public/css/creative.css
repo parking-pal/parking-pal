@@ -7,6 +7,18 @@
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
 
+.dashboard-find-spot p {
+    font-size: 2em;
+    color: white;
+}
+
+.dashboard-find-spot {
+    width:80%;
+    margin: auto;
+    align: center;
+}
+
+
 .home-button-1 {
     display: inline-block;
     float: left;

@@ -35,8 +35,11 @@
       </div>
     </div>
     {{else}}
-    <div>
-        <h1>You currently don't have any parking spots listed for rent!</h1>
+    <div class="dashboard-find-spot">
+        <p>You currently don't have any parking spots listed for rent!</p>
+            <form method="get" action="/homeowner">
+              <button name="action" value="homeowner" class="btn btn-default btn-xl wow tada">List Parking</button>
+            </form>
     </div>
     {{/if}}
     <br><br>{{#if Rental.length}}
@@ -69,8 +72,11 @@
       </div>
     </div><br><br>
      {{else}}
-    <div>
-        <h1>You currently aren't renting any parking spots!</h1>
+    <div class="dashboard-find-spot">
+        <p>You currently aren't renting any parking spots!</p>
+                  <br><form method="get" action="/commuter">
+                      <button name="action" value="commuter" class="btn btn-default btn-xl wow tada">Find Parking</button>
+                  </form><br><br>
     </div>
     {{/if}}
 <script>
