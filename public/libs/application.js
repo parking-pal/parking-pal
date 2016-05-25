@@ -45,7 +45,7 @@ $.getJSON("/api/parkingSpot", function(houses) {
     marker.addListener('click', function() {
         infowindow.open(map, this);
         document.getElementById('address').innerHTML = ('<h4><small>Address: </small></h4>' + this.address);
-        document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00');
+        document.getElementById('price').innerHTML = ('<small>Rental price: </small>'+'$' + this.price + '.00' +'/day');
         if (this.rental_length == 1) {
           document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Weekly');
         } else {

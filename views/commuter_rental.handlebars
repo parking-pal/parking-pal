@@ -14,22 +14,23 @@
                   <div>You have tentatively confirmed a parking spot at {{spot.address}}</div>
                   <div>Beginning on {{spot.availability}}</div>
                   <div>Please respect the owner's and the neighbour's property and privacy.</div>
+                  <div>
                 {{/if}}
               <br>
               <form class="form-confirmation" method="POST">
                 <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_test_yhwrDaHZJtuijc3LZNNTfjch"
-                data-amount={{spot.rental_price}}00 
-                data-name="Parking Pal"
-                data-description="Parking made ez"
-                data-image="http://cdn.shopify.com/s/files/1/0885/3586/products/thumbnail0_large.jpg?v=1433951403"
-                data-locale="auto"
-                data-email={{user.email}}
-                data-label="Pay with Credit Card"
-                data-allow-remember-me=false
-                >
-              </script>
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_yhwrDaHZJtuijc3LZNNTfjch"
+                  data-amount={{parkPrice}}
+                  data-name="Parking Pal"
+                  data-description="Parking made ez"
+                  data-image="http://cdn.shopify.com/s/files/1/0885/3586/products/thumbnail0_large.jpg?v=1433951403"
+                  data-locale="auto"
+                  data-email={{user.email}}
+                  data-label="Pay with Credit Card"
+                  data-allow-remember-me=false
+                  >
+                </script>
             </form>
             </div><br><br>              
           </div>
