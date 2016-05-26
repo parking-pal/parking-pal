@@ -6,6 +6,11 @@
 
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
+
+.cancel {
+    cursor: pointer;
+}
+
 .homepage-p p {
     font-size: 3em !important;
     color: white;
