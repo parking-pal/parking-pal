@@ -49,12 +49,12 @@ $.getJSON("/api/parkingSpot", function(houses) {
           if (!this.act)
           {
             console.log("&&&", this.act);
+            document.getElementById('rentbutt').innerHTML = '<a id="idbutt" href=""><button class="btn btn-default butt" id="butt">Rent</button></a>'
             document.getElementById('idbutt').href = ('/commuter/rent/' + this.id );
-            document.getElementById('idbutt').style.visibility = "visible";
           }
           else
           {
-            document.getElementById('idbutt').style.visibility = "hidden";
+            document.getElementById('rentbutt').innerHTML = ''          
           }
         });
       };
@@ -68,4 +68,4 @@ $.getJSON("/api/parkingSpot", function(houses) {
     }
     });
   };
-  var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>'+ '<a id="idbutt" href=""><button class="btn btn-default butt" id="butt">Rent</button></a></div>';
+  var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>' + '<div id="rentbutt"></div></div>';
