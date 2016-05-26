@@ -53,6 +53,7 @@
                 <th>Rental Price ($/day)</th>
                 <th>Rental Time (From)</th>
                 <th>Rental Time (Until)</th>
+                <th>Renewal Status</th>
               </tr>
             </thead>
             <tbody>
@@ -64,7 +65,7 @@
                 <td>{{ParkingSpot.rental_price}}</td>
                 <td>{{ParkingSpot.start_time}}</td>
                 <td>{{ParkingSpot.end_time}}</td>
-                <td>{{#if is_active}}<a class="active btn btn-default btn-l wow tada" data-id="{{ParkingSpotId}}">Cancel Auto Renewal</a>{{else}}<a class="renewal-cancelled">Auto Renewal Cancelled</a>{{/if}}</td>
+                <td>{{#if is_active}}<a class="active-button btn btn-default btn-l wow tada" data-id="{{id}}">Cancel Auto Renewal</a>{{else}}<a class="renewal-cancelled">Auto Renewal Cancelled</a>{{/if}}</td>
               </tr>
             {{/each}}  
             </tbody>
@@ -89,11 +90,11 @@
     });
   });
     $(function(){
-      $('.active').on('click', function(){  
+      $('.active-button').on('click', function(){  
         var r = confirm('Once you cancel your parking spot, it is available to all Parking Pal users');
         if (r == true){
           var id = $(this).data('id');
-          $.post( "/api/rentals/"+id+"/active", function( data ) {
+          $.post( "/api/rentals/"+id+"/cancel", function( data ) {
             console.log( data );
             location.reload();
           });
