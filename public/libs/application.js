@@ -7,7 +7,7 @@ function initMap() {
   setMarkers(map);
   infowindow = new google.maps.InfoWindow({
     content: contentString,
-    maxWidth: 200,
+    maxWidth: 300,
   });
 }
 
@@ -24,12 +24,13 @@ $.getJSON("/api/parkingSpot", function(houses) {
         price: house.rental_price,
         rental_length: house.rental_length,
         user: house.UserId,
+        start: house.start_time,
+        end: house.end_time,
         avail: house.availability,
         id: house.id,
         act: house.is_active,
         cancelled: house.cancelled
       });
-      console.log("!!#!", marker);
       if (marker.act) {
         marker.icon = 'http://maps.google.com/mapfiles/marker_grey.png'
       }
@@ -45,6 +46,8 @@ $.getJSON("/api/parkingSpot", function(houses) {
             document.getElementById('rental_length').innerHTML = ('<small>Rental length: </small>'+ 'Monthly');
           }
           document.getElementById('avail').innerHTML = ('<small>Available:  </small>'+ moment(this.avail).format('ddd MMM Do, YYYY'))
+          document.getElementById('startt').innerHTML = ('<small>Start time:  </small>'+ this.start)
+          document.getElementById('endt').innerHTML = ('<small>End time:  </small>'+ this.end)
             console.log("@@@", marker.act);
     //    console.log("!!!3", this.act);
           if (!this.act)
@@ -69,4 +72,4 @@ $.getJSON("/api/parkingSpot", function(houses) {
     }
     });
   };
-  var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>' + '<hr>' +'<div id="rentbutt"></div></div>';
+  var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+'<h4 id="startt"></h4>'+ '<h4 id="endt"></h4>'+  '<h4 id="address"></h4>' + '<hr>' +'<div id="rentbutt"></div></div>';
