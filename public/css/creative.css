@@ -7,6 +7,13 @@
 /*@import url(http://weloveiconfonts.com/api/?family=fontawesome);*/
 
 
+#backbutt {
+    background: #f05f40;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
 .cancel {
     cursor: pointer;
 }
@@ -35,6 +42,7 @@
 }
 .stripe-button-el span {
     background: #f05f40 !important;
+
 }
 button.stripe-button-el {
     background: #f05f40;
