@@ -9,16 +9,7 @@
         </div>
         <div class="bounce"><i class="fa fa-angle-double-down" ></i></div>    
      </header>
-<!--       <table>
-        {{#each users}}
-          <tr>
-            <td>{{first_name}}</td>
-            <td>{{last_name}}</td>
-            <td>{{email}}</td>
-            <td>{{phone}}</td>
-          </tr>
-        {{/each}}
-      </table> -->
+
     <section class="bg-primary" id="about">
         <div class="container">
             <div>
@@ -29,7 +20,7 @@
                       </form></div>
                       <div class=".col-xs-6" id="homebut2">
                       {{#if user}}
-                      <a href="/homeowner" class="btn btn-default btn-xl wow tada">List Parking</a>
+                      <a href="/homeowner" class="btn btn-default btn-xl wow tada">List My Parking Spot</a>
                       {{else}}
                       <a href="/login?redirect=/homeowner" class="btn btn-default btn-xl wow tada">List My Parking Spot</a>
                       {{/if}}

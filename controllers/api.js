@@ -8,6 +8,7 @@ module.exports = function(app) {
     models.ParkingSpot.findAll({
         include: [{ model: models.Rental }]
       }).then(function(spots) {
+        console.log(spots);
       res.json(spots);
     }).catch(function(error){
       console.log(JSON.stringify(error));
