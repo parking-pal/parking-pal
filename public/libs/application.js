@@ -6,7 +6,8 @@ function initMap() {
   });
   setMarkers(map);
   infowindow = new google.maps.InfoWindow({
-    content: contentString
+    content: contentString,
+    maxWidth: 200,
   });
 }
 
@@ -68,4 +69,4 @@ $.getJSON("/api/parkingSpot", function(houses) {
     }
     });
   };
-  var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>' + '<div id="rentbutt"></div></div>';
+  var contentString = '<div id="infowin"><h4 id="price"></h4>' + '<h4 id="rental_length"></h4>' + '<h4 id="avail"></h4>'+ '<h4 id="address"></h4>' + '<hr>' +'<div id="rentbutt"></div></div>';

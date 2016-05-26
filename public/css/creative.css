@@ -360,8 +360,17 @@ hr {
     border-width: 3px;
 }
 
+#infowin hr {
+    width: 100px;
+}
+
 hr.light {
     border-color: #fff;
+}
+
+
+#rentbutt {
+    text-align: center;
 }
 
 a {
