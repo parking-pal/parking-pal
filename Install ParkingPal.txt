@@ -1,0 +1,39 @@
+Install ParkingPal.txt
+
+Install node
+
+$	curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+$	sudo apt-get install -y nodejs
+
+
+Install npm
+
+$	sudo npm install -g nodemon
+
+
+Install nodemon
+
+$	sudo npm install -g nodemon
+
+Install Express
+
+$	npm install express
+$	npm install express express-generator
+$	npm install express-handlebars
+$	npm install -g pg
+$	npm install body-parser
+$	sudo apt install pgadmin3
+
+$ npm install --save sequelize
+
+# And one of the following:
+$ npm install --save pg pg-hstore
+$ npm install --save mysql
+$ npm install --save sqlite3
+$ npm install --save tedious // MSSQL
+
+$ npm install passport
+$ npm install cookie-parser
+$ npm install express-session
+$ npm install passport-local
+$ npm install connect-multiparty
