@@ -23,6 +23,11 @@
     color: white;
 }
 
+.homepage-lhl p {
+    font-size: 3em;
+    background: red;
+}
+
 
 .dashboard-find-spot p {
     font-size: 2em;
