@@ -112,13 +112,13 @@ button.stripe-button-el {
 }
 
 #infoleft {
-    float: left;
-    width: 50%
+    width: 50%;
+    min-width: 35em;
 }
 
 #inforight {
-    display: inline-block;
-    width: 50%
+    width: 50%;
+    min-width: 30em;
 }
 
 .textinfo {
@@ -152,8 +152,12 @@ button.stripe-button-el {
     width: 100%;
  }
 
-table.homeowner-table {
-    table-layout: auto;
+.homeowner-table {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-top: 4em;
+    align-items: center;
 }
 
 .outterFromTo {

@@ -1,135 +1,106 @@
         <header>
-           <br><br><br>
-            <h1>Parking Spot Rental Information</h1>
-              <table class="homeowner-table"> 
-                <tr>    
-                    <td id="infoleft">     
-                            <!-- Homeowner Parking Spot Form -->
-                        <div class="homeowner-wall">
-                          <form method="post" action="/homeowner" class="parkingSpotForm">
-    <!-- ADDRESS -->
-                          {{#if spotExists}}
-                                <p class="textinfo">*** {{spotExists}} already entered ***</p>
-                          {{else}}
-                                <p class="textinfo">Enter your address of the spot you wish to list</p>
-                          {{/if}}
-                            <div>
+         <br><br><br>
+         <h1>Parking Spot Rental Information</h1>
+         <div class="homeowner-table"> 
+          <div id="infoleft">     
+            <!-- Homeowner Parking Spot Form -->
+            <div class="homeowner-wall">
+              <form method="post" action="/homeowner" class="parkingSpotForm">
+                <!-- ADDRESS -->
+                {{#if spotExists}}
+                <p class="textinfo">*** {{spotExists}} already entered ***</p>
+                {{else}}
+                <p class="textinfo">Enter your address of the spot you wish to list</p>
+                {{/if}}
+                <div>
 
-                                <input id="address" name="address" type="address" class="form-control" placeholder="Address" required autofocus />
-                                <div class='btn btn-warning' id="addbutt">Search</div>
-                            </div><br>
-    <!-- Availability Date -->
-                                      <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker12'>
-                                            <input type='text' class="form-control" name="availability" required />
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
-                                      </div>
-    <!-- Rental Length -->
-                            <div>
-                                <select class="form-control" id="rentalLength" name="rental_length">
-                                  <option name="weekly" value="1">Weekly</option>
-                                  <option name="monthly" value="2">Monthly</option>
-                                </select>
-                            </div><br>
-    <!-- Rental Price -->
-                            <div>
-                                  <label>Choose Daily Rental Price</label>
-                                  <div class="rentalPrice">
-                                      <div class="plusMinus">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default" data-value="decrease" data-target="#spinner" data-toggle="spinner">
-                                              <span class="glyphicon glyphicon-minus"></span>
-                                            </button>
-                                        </span>
-                                      </div>
-                                      <div class="plusMinus">
-                                          <input type="text" data-ride="spinner" id="spinner" class="form-control input-number" value="1" name="rental_price">
-                                      </div>
-                                      <div class="plusMinus">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default" data-value="increase" data-target="#spinner" data-toggle="spinner">
-                                              <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </span>
-                                      </div>
-                                  </div>
-                            </div><br>
-    <!-- Rental Time Range -->
-                            <label>Select time the Parking Spot is available each day</label>
-                            <div class="outterFromTo">
-                            <div class="fromTo">
-                                  <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true"><span class="input-group-addon">
-                                      FROM</span>
-                                  <input type="text" class="form-control" name="start_time" value="08:30">
-                                  <span class="input-group-addon">
-                                      <span class="glyphicon glyphicon-time"></span>
-                                  </span>
-                                  </div>
-                            </div><br>
-                            <div class="fromTo">
-                                  <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true"><span class="input-group-addon">
-                                      UNTIL</span>
-                                  <input type="text" class="form-control" name="end_time" value="16:30">
-                                  <span class="input-group-addon">
-                                      <span class="glyphicon glyphicon-time"></span>
-                                  </span>
-                                  </div>
-                            </div>
-                            </div>
-    <!--  Hidden geolocation field -->
-                            <input type="hidden" id="latitude" name="latitude" value="{{latitude}}" />
-                            <input type="hidden" id="longitude" name="longitude" value="{{longitude}}" />
-                            <br><br>
-                            <div>
-              <!--                 <form class="form-confirmation" id="orangebutt" method="POST"> -->
-                              <!--   <script
-                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                data-key="pk_test_yhwrDaHZJtuijc3LZNNTfjch"
-                                data-amount={{spot.rental_price}}00 
-                                data-name="Parking Pal"
-                                data-description="Parking made ez"
-                                data-image="http://cdn.shopify.com/s/files/1/0885/3586/products/thumbnail0_large.jpg?v=1433951403"
-                                data-locale="auto"
-                                data-email={{user.email}}
-                                data-label="Add card to receive payments"
-                                data-allow-remember-me=false
-                                >
-                              </script> -->
-                            <!-- </form> -->
-                            <button type="submit" class="btn btn-default btn-xl wow tada" id="orangebutt" disabled>Submit</button>
-                            </div>
-                           </form> 
-                        </div>  
-                    </td>                 
-                    <td id="inforight">
-                      <script src="/public/libs/homemap.js"></script>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI8bTRZVfp9K-DER1MfqkYsOrPKiVxwYM  
-                     &callback=initHomeMap"
-                     async defer></script>
-    <!-- Google Maps API INSERT HERE -->
-                        <div class="table-center">
-                         <div id="map-div-homeowner" class="bg-dark">
-                          <div id="homeMap" onload="initHomeMap()"></div>
+                  <input id="address" name="address" type="address" class="form-control" placeholder="Address" required autofocus />
+                  <div class='btn btn-warning' id="addbutt">Search</div>
+                </div><br>
+                <!-- Availability Date -->
+                <div class="form-group">
+                  <div class='input-group date' id='datetimepicker12'>
+                    <input type='text' class="form-control" name="availability" required />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+                <!-- Rental Length -->
+                <div>
+                  <select class="form-control" id="rentalLength" name="rental_length">
+                    <option name="weekly" value="1">Weekly</option>
+                    <option name="monthly" value="2">Monthly</option>
+                  </select>
+                </div><br>
+                <!-- Rental Price -->
+                <div>
+                  <label>Choose Daily Rental Price</label>
+                  <div class="rentalPrice">
+                    <div class="plusMinus">
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" data-value="decrease" data-target="#spinner" data-toggle="spinner">
+                          <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                      </span>
+                    </div>
+                    <div class="plusMinus">
+                      <input type="text" data-ride="spinner" id="spinner" class="form-control input-number" value="1" name="rental_price">
+                    </div>
+                    <div class="plusMinus">
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" data-value="increase" data-target="#spinner" data-toggle="spinner">
+                          <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div><br>
+                <!-- Rental Time Range -->
+                <label>Select time the Parking Spot is available each day</label>
+                <div class="outterFromTo">
+                  <div class="fromTo">
+                    <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true"><span class="input-group-addon">
+                      FROM</span>
+                      <input type="text" class="form-control" name="start_time" value="08:30">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </div><br>
+                  <div class="fromTo">
+                    <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true"><span class="input-group-addon">
+                      UNTIL</span>
+                      <input type="text" class="form-control" name="end_time" value="16:30">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!--  Hidden geolocation field -->
+                <input type="hidden" id="latitude" name="latitude" value="{{latitude}}" />
+                <input type="hidden" id="longitude" name="longitude" value="{{longitude}}" />
+                <br><br>
+                <div>
+                  <button type="submit" class="btn btn-default btn-xl wow tada" id="orangebutt" disabled>Submit</button>
+                </div>
+              </form> 
+            </div>  
+          </div>                 
+          <div id="inforight">
+            <script src="/public/libs/homemap.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI8bTRZVfp9K-DER1MfqkYsOrPKiVxwYM  
+            &callback=initHomeMap"
+            async defer></script>
+            <!-- Google Maps API INSERT HERE -->
+            <div class="table-center">
+             <div id="map-div-homeowner" class="bg-dark">
+              <div id="homeMap" onload="initHomeMap()"></div>
 
-                         </div>
-                        </div>
-                    </td>
-                </tr>          
-              </table>    
-<!--     <script>
-      $(function(){
-        $('.active').on('click', function(){  
-          var r = alert('Spot already exists');
-          var id = $(this).data('id');
-          $.post( "/api/rentals/"+id+"/active", function( data ) {
-            console.log( data );
-            location.reload();
-          });
-        });
-      });  
-    </script> -->
-        </header>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </header>
