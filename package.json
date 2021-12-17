@@ -41,6 +41,6 @@
     "start": "node app.js"
   },
   "engines": {
-    "node": "6.13.4"
+    "node": "6.x"
   }
 }
