@@ -16,4 +16,4 @@ We used this tech stack for a few reasons.
 2. To utilize and implement API's (GoogleMaps, Stripe)
 3. Ruby does not seem to be as popular a language in the Okanagan as it is in Vancouver, and we used ruby for our midterm project.
 
-We purchased a domain, www.parkingpal.xyz and redirected it to Heroku.
+Domain expired, now hosted on Kiefers Heroku https://parking-pal-project.herokuapp.com/.
